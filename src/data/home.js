@@ -14,8 +14,7 @@ export const about = {
   label: 'Who We Are',
   heading: 'About Global Unibridge',
   paragraphs: [
-    'Global Unibridge is a strategic India market entry and expansion partner for universities, colleges, schools, and education institutions. We help institutions build a strong presence in India through market intelligence, institutional partnerships, student outreach, and in-country representation.',
-    "Supported by our network of education-focused brands, we connect institutions with students, counselors, and recruitment channels, enabling sustainable growth in one of the world's largest education markets.",
+    "Global Unibridge is a strategic India market entry and expansion partner for universities, colleges, schools, and education institutions. We help institutions build a strong presence in India through market intelligence, institutional partnerships, student outreach, and in-country representation. Supported by our network of education-focused brands, we connect institutions with students, counselors, and recruitment channels, enabling sustainable growth in one of the world's largest education markets.",
   ],
   stats: [
     { value: '100+', label: 'Years of Education & Market Experience' },
