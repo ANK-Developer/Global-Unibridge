@@ -1,70 +1,95 @@
-.meta {
-  margin-top: 22px;
+/* Article detail — matches the reference custom article page:
+   centered title, hero banner, 900px white column, sub-labels + disc lists. */
+.articleHeader {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 30px 10px;
+  text-align: center;
 }
-.meta span {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #fff;
+.articleTitle {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #111;
+  margin: 0 0 15px;
+}
+
+.heroImgWrap {
+  max-width: 900px;
+  margin: 48px auto 0;
+}
+.heroImg {
+  width: 100%;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.articlePage {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 30px 80px;
+  background: #fff;
+}
+
+.articleIntro {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #4a5568;
+  text-align: justify;
+}
+.articleIntro p { margin: 0 0 16px; }
+
+.contentSection {
+  margin-top: 10px;
+}
+.sectionHeading {
+  font-size: 30px;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 20px;
+  line-height: 1.3;
+}
+.subLabel {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  color: #111;
+  margin: 20px 0 15px;
+}
+.sectionText {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #444;
+  text-align: justify;
+}
+.sectionText p { margin: 0 0 16px; }
+
+.benefitList {
+  list-style: disc;
+  padding-left: 25px;
+  margin: 0 0 10px;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #444;
+}
+.benefitList li { margin-bottom: 6px; }
+
+/* FAQ */
+.faqSection {
+  margin-top: 50px;
+}
+.faqLabel {
+  color: #ff0000;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  padding: 7px 14px;
-  border-radius: 6px;
-}
-
-.body {
-  max-width: 860px;
-  margin: 0 auto;
-}
-.block {
-  margin-bottom: 46px;
-}
-.blockTitle {
   font-size: 26px;
-  line-height: 1.3;
-  color: var(--color-accent);
-  margin: 0 0 18px;
-}
-.para {
-  font-size: 16px;
-  line-height: 1.8;
-  color: var(--color-text);
-  margin: 0 0 16px;
-}
-.listTitle {
-  font-size: 18px;
-  color: var(--color-primary);
-  margin: 24px 0 16px;
-}
-.list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 14px;
-}
-.list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--color-accent);
-}
-.list svg { flex-shrink: 0; margin-top: 1px; }
-
-.faqSection {
-  max-width: 860px;
-  margin: 64px auto 0;
-}
-.faqWrap {
-  margin-top: 32px;
+  text-align: center;
+  margin: 0 0 22px;
 }
 
 .backWrap {
-  max-width: 860px;
   margin: 48px auto 0;
   text-align: center;
 }
@@ -78,5 +103,11 @@
 .back:hover { color: var(--color-accent); }
 
 @media (max-width: 767px) {
-  .blockTitle { font-size: 22px; }
+  .articleHeader { padding: 40px 18px 10px; }
+  .articleTitle { font-size: 30px; }
+  .heroImgWrap { padding: 0 15px; }
+  .heroImg { border-radius: 14px; }
+  .articlePage { padding: 28px 18px 60px; }
+  .sectionHeading { font-size: 24px; }
+  .subLabel { font-size: 20px; }
 }

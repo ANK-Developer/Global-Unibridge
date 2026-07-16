@@ -1,15 +1,15 @@
 /* ---- Banner + intro body ---- */
 .bannerSection {
-  padding: 0 0 8px;
+  padding: 0 0 10px;
 }
 .banner {
-  border-radius: 16px;
+  border-radius: 40px;
   overflow: hidden;
   margin-bottom: 34px;
 }
 .banner img {
   width: 100%;
-  height: 340px;
+  height: 500px;
   object-fit: cover;
   display: block;
 }

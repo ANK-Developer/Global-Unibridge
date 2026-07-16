@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/PageHero/PageHero.jsx'
-import Media from '../components/Media/Media.jsx'
 import { articles, articleCategories } from '../data/articles.js'
 import styles from './Articles.module.css'
 
@@ -30,11 +29,13 @@ export default function Articles() {
 
       <section className="section-pad">
         <div className="container">
-          <div className={styles.filters}>
+          <div className={styles.filters} role="tablist" aria-label="Article categories">
             {articleCategories.map((c) => (
               <button
                 key={c}
                 type="button"
+                role="tab"
+                aria-selected={filter === c}
                 className={`${styles.filter} ${filter === c ? styles.filterActive : ''}`}
                 onClick={() => setFilter(c)}
               >
@@ -45,17 +46,17 @@ export default function Articles() {
 
           <div className={styles.grid}>
             {shown.map((a) => (
-              <article key={a.slug} className={styles.card}>
-                <div className={styles.cardMedia}>
-                  <Media src={a.image} alt={a.title} ratio="16 / 9" rounded={false} />
-                  <span className={styles.readTime}>{a.readTime}</span>
+              <Link key={a.slug} to={a.to} className={styles.card}>
+                <div className={styles.cardImgWrapper}>
+                  <img src={a.image} alt={a.title} loading="lazy" />
+                  <span className={styles.readTag}>{a.readTime}</span>
                 </div>
-                <div className={styles.cardBody}>
+                <div className={styles.cardContent}>
                   <h3 className={styles.cardTitle}>{a.title}</h3>
                   <p className={styles.cardExcerpt}>{a.excerpt}</p>
-                  <Link to={a.to} className={styles.readMore}>Read Full Article</Link>
+                  <span className={styles.cardBtn}>Read Full Article</span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>

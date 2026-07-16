@@ -9,7 +9,7 @@ import styles from './About.module.css'
 
 const COUNTRIES = 'United States, Canada, United Kingdom, Australia, Germany, Ireland, and New Zealand'
 
-// Custom FAQ accordion matching the source .faq-section (navy circle + icon,
+// Custom FAQ accordion matching the source .faq-section (navy circle+ icon,
 // rotates 45° and turns red #ff1803 when open).
 function FaqBlock({ heading, intro, items }) {
   const [open, setOpen] = useState(0)

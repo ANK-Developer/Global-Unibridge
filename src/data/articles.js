@@ -101,7 +101,7 @@ export const articles = [
     readTime: '5 MIN READ',
     excerpt:
       'Understand the changing preferences of Indian students, including popular global destinations, high-demand academic programs, and the factors influencing international education decisions.',
-    image: '/images/insight-2.jpg',
+    image: '/images/insight-2.webp',
     heroIntro: [
       'Understand the changing preferences of Indian students, including popular global destinations, high-demand academic programs, and the factors influencing international education decisions.',
     ],
@@ -352,7 +352,7 @@ export const articles = [
     readTime: '8 MIN READ',
     excerpt:
       'Understand why localized representation, regional engagement, and on-ground support have become essential for institutions building a sustainable presence in India.',
-    image: '/images/insight-5.jpg',
+    image: '/images/insight-5.webp',
     heroIntro: [
       "Bridging global education and local ecosystems — strategic, cost-efficient, and relationship-driven. India's student market spans Tier-1 metros to rapidly emerging Tier-2 and Tier-3 cities, each with unique preferences, communication styles, and career aspirations. This article explores how in-country representation helps international institutions build stronger, more sustainable connections within India's education ecosystem.",
     ],
