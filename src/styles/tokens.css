@@ -1,0 +1,71 @@
+/* ============================================================
+   Design Tokens — extracted verbatim from _reference/home.html
+   (Eduma / Thim "thim-ekits" + Elementor Kit 497).
+   Every value below appears in the source CSS. No approximations.
+   ============================================================ */
+
+:root {
+  /* ---- Brand colors (Elementor global colors) ---- */
+  --color-primary: #182c59;      /* --e-global-color-primary / secondary (navy) */
+  --color-secondary: #182c59;    /* --e-global-color-secondary */
+  --color-accent: #111111;       /* --e-global-color-accent (titles) */
+  --color-text: #4F4F4F;         /* --e-global-color-text / thim body color */
+  --color-white: #FFFFFF;        /* --e-global-color-5f782af */
+  --color-black: #000000;        /* --e-global-color-6b28c0b */
+  --color-danger: #DF0000;       /* --e-global-color-d4edbd9 */
+
+  /* ---- Accent reds (home custom sections / eyebrow labels) ---- */
+  --color-red: #ff0000;          /* eyebrow labels — source uses inline color:red */
+  --color-brick: #d33030;        /* service image-box card titles */
+  --color-usp-border: #2b8dd8;   /* USP card border */
+  --color-usp-badge: #123d73;    /* USP card floating header */
+  --color-usp-outline: #0d3b78;  /* "Our Biggest USP" pill */
+
+  /* ---- Warm / beige palette (backgrounds, cards) ---- */
+  --color-cream: #F8F4EE;        /* --e-global-color-7eb20da */
+  --color-beige: #EDE2D4;        /* --e-global-color-b663d07 */
+  --color-tan: #DDC6AB;          /* --e-global-color-c1af41a */
+  --color-warm-grey: #E2E0DB;    /* --e-global-color-20b9a19 */
+
+  /* ---- Neutral greys ---- */
+  --color-grey-50: #F5F5F5;      /* --e-global-color-a123ff9 */
+  --color-grey-100: #E5E5E5;     /* --e-global-color-659156c */
+  --color-grey-200: #D1D1D1;     /* --e-global-color-792b526 */
+  --color-grey-400: #9D9D9D;     /* --e-global-color-6e6e5bc */
+  --color-grey-500: #737373;     /* --e-global-color-3f8de33 */
+  --color-border: #EEEEEE;       /* --thim-border-color */
+
+  /* ---- Typography families ---- */
+  --font-heading: "Urbanist", sans-serif;  /* --thim-font-title-font-family */
+  --font-body: "Urbanist", sans-serif;     /* --thim-font-body-font-family */
+  --font-ui: "Segoe UI", sans-serif;       /* nav + body text: source has a global *{font-family:"Segoe UI"} */
+
+  /* ---- Base type ---- */
+  --font-size-base: 16px;        /* --thim-font-body-font-size */
+  --line-height-base: 1.5em;     /* --thim-font-body-line-height */
+  --font-color-title: #111111;   /* --thim-font-title-color */
+  --font-weight-body: 400;
+  --font-weight-title: 700;      /* --thim-font-title-variant */
+
+  /* ---- Heading sizes (Elementor global typography) ---- */
+  --font-size-h1: 48px;          /* typography-722e303 (48/700, lh 1.25em) */
+  --font-size-h2: 36px;          /* typography-primary (36/700, lh 1.5em) */
+  --font-size-h3: 32px;          /* typography-5a3aa4c (32/700, lh 40px) */
+  --font-size-sm: 14px;          /* typography-secondary (14/400) */
+
+  /* ---- Buttons ---- */
+  --button-font-size: 16px;      /* --thim-font-button-font-size */
+  --button-font-weight: 600;     /* --thim-font-button-variant */
+  --button-line-height: 1.5em;
+  --button-text-transform: capitalize;
+
+  /* ---- Layout / containers (Elementor .e-con) ---- */
+  --container-max-width: 1290px; /* desktop boxed container */
+  --container-tablet: 1024px;    /* @media <=1024 */
+  --container-mobile: 767px;     /* @media <=767 */
+  --container-padding: 15px;
+
+  /* ---- Breakpoints (Elementor defaults) ---- */
+  --bp-tablet: 1024px;
+  --bp-mobile: 767px;
+}

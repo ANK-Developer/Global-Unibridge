@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="font-size:90px" viewBox="0 0 64 64" fill="none">
+ 
+ <rect x="8" y="18" width="16" height="28" rx="2" fill="#182c59"></rect>
+ <rect x="12" y="22" width="3" height="3" fill="white"></rect>
+ <rect x="17" y="22" width="3" height="3" fill="white"></rect>
+ <rect x="12" y="28" width="3" height="3" fill="white"></rect>
+ <rect x="17" y="28" width="3" height="3" fill="white"></rect>
+ 
+ <rect x="40" y="18" width="16" height="28" rx="2" fill="#182c59"></rect>
+ <rect x="44" y="22" width="3" height="3" fill="white"></rect>
+ <rect x="49" y="22" width="3" height="3" fill="white"></rect>
+ <rect x="44" y="28" width="3" height="3" fill="white"></rect>
+ <rect x="49" y="28" width="3" height="3" fill="white"></rect>
+ 
+ <path d="M26 34L30 38C31.5 39.5 34 39.5 35.5 38L38 35" stroke="#ff1803" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+ <path d="M24 30L29 35M40 30L35 35" stroke="#ff1803" stroke-width="3" stroke-linecap="round"></path>
+ 
+ <path d="M24 26H40" stroke="#182c59" stroke-width="2" stroke-dasharray="3 3"></path>
+ 
+ <circle cx="32" cy="14" r="6" fill="#ff1803"></circle>
+ <path d="M29 14H35M32 11V17" stroke="#182c59" stroke-width="2" stroke-linecap="round"></path>
+ </svg>

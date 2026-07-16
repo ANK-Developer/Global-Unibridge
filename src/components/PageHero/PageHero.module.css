@@ -1,0 +1,45 @@
+/* Inner-page hero — white, centered heading (matches reference sc_heading text-center). */
+.hero {
+  background: #fff;
+  color: var(--color-accent);
+  padding: 72px 0 28px;
+  text-align: center;
+}
+.hero.left {
+  text-align: left;
+}
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-red);
+  margin-bottom: 12px;
+}
+.heading {
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.25;
+  color: #182c59;
+  font-weight: 700;
+  margin: 0 auto 18px;
+  max-width: 980px;
+}
+.hero.left .heading {
+  margin-left: 0;
+}
+.lead {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0 auto 14px;
+  max-width: 860px;
+}
+.hero.left .lead {
+  margin-left: 0;
+}
+
+@media (max-width: 767px) {
+  .hero { padding: 48px 0 20px; }
+}

@@ -1,0 +1,252 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-primary);
+  transition: box-shadow 0.25s ease, background 0.25s ease;
+}
+.scrolled {
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.25);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 84px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.logo img {
+  height: 68px;
+  width: auto;
+}
+/* Text fallback shown until the real logo PNG is dropped in /public/images */
+.logoText {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 20px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 20px 15px 20px 20px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: color 0.2s ease;
+}
+.navLink:hover {
+  color: var(--color-red);
+}
+/* Active/current item stays white (source: --menu-text-color) */
+.active {
+  color: #fff;
+}
+
+.caret {
+  transition: transform 0.25s ease;
+}
+.caretOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: relative;
+}
+
+/* ---- Full-width Resources mega-menu ---- */
+.megaMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 24px 44px rgba(24, 44, 89, 0.15);
+  border-radius: 0 0 18px 18px;
+  padding: 28px 0 34px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s;
+  z-index: 90;
+}
+.megaOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.megaInner {
+  width: 100%;
+  max-width: 1265px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.megaCol {
+  display: flex;
+  flex-direction: column;
+}
+.megaLabel {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  color: #b0b0b0;
+  margin: 0 0 14px;
+}
+.megaLabel a {
+  color: inherit;
+}
+.megaLabel a:hover {
+  color: var(--color-primary);
+}
+.megaCard {
+  position: relative;
+  display: block;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.megaCard img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.megaCard:hover img {
+  transform: scale(1.04);
+}
+/* subtle gradient (only on the card that has an overlay label) so white text stays legible */
+.megaCard:has(.megaOverlay)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+  pointer-events: none;
+}
+.megaOverlay {
+  position: absolute;
+  left: 20px;
+  bottom: 12px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 1;
+}
+
+.cta {
+  flex-shrink: 0;
+}
+
+/* ---- Mobile ---- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.drawer {
+  position: fixed;
+  top: 84px;
+  right: 0;
+  width: 280px;
+  max-width: 82vw;
+  height: calc(100vh - 84px);
+  background: var(--color-white);
+  box-shadow: -8px 0 32px rgba(24, 44, 89, 0.14);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 99;
+  overflow-y: auto;
+}
+.drawerOpen {
+  transform: translateX(0);
+}
+.drawerLink {
+  font-family: var(--font-ui);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--color-accent);
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--color-grey-100);
+}
+.drawerLink:hover {
+  color: var(--color-primary);
+}
+.drawerGroupLabel {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-grey-500);
+  padding: 14px 8px 4px;
+}
+.drawerSub {
+  padding-left: 20px;
+}
+.backdrop {
+  position: fixed;
+  inset: 84px 0 0 0;
+  background: rgba(24, 44, 89, 0.35);
+  z-index: 98;
+}
+
+@media (max-width: 1024px) {
+  .nav,
+  .cta {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}

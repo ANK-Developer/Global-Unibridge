@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="font-size:90px" viewBox="0 0 64 64" fill="none">
+ 
+ <rect x="10" y="18" width="20" height="22" rx="2" fill="#182c59"></rect>
+ <path d="M8 18L20 10L32 18" stroke="#182c59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+ 
+ <rect x="15" y="24" width="4" height="4" fill="white"></rect>
+ <rect x="21" y="24" width="4" height="4" fill="white"></rect>
+ <rect x="15" y="31" width="4" height="4" fill="white"></rect>
+ <rect x="21" y="31" width="4" height="4" fill="white"></rect>
+ 
+ <circle cx="48" cy="20" r="7" fill="#ff1803"></circle>
+ <path d="M38 38C38 32 42 28 48 28C54 28 58 32 58 38" stroke="#182c59" stroke-width="3" stroke-linecap="round"></path>
+ 
+ <circle cx="18" cy="52" r="4" fill="#ff1803"></circle>
+ <circle cx="32" cy="48" r="4" fill="#ff1803"></circle>
+ <circle cx="46" cy="52" r="4" fill="#ff1803"></circle>
+ 
+ <path d="M22 52L28 49" stroke="#182c59" stroke-width="3" stroke-linecap="round"></path>
+ <path d="M36 49L42 52" stroke="#182c59" stroke-width="3" stroke-linecap="round"></path>
+ 
+ <path d="M30 28L40 24" stroke="#ff1803" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"></path>
+ </svg>

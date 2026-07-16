@@ -1,0 +1,42 @@
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--color-grey-400);
+}
+.breadcrumb a { color: var(--color-primary); }
+.breadcrumb a:hover { color: var(--color-red); }
+.breadcrumb span[aria-current] { color: var(--color-grey-500); }
+
+.body {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.section {
+  margin-bottom: 36px;
+}
+.section h2 {
+  font-size: 22px;
+  color: var(--color-accent);
+  margin: 0 0 14px;
+}
+.section p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0 0 12px;
+}
+.section ul {
+  margin: 8px 0 12px;
+  padding-left: 22px;
+}
+.section li {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}

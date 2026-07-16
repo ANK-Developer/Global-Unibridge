@@ -1,0 +1,23 @@
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--color-grey-400);
+}
+.breadcrumb a { color: var(--color-primary); }
+.breadcrumb a:hover { color: var(--color-red); }
+.breadcrumb span[aria-current] { color: var(--color-grey-500); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 767px) {
+  .grid { grid-template-columns: 1fr; }
+}

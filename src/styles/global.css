@@ -1,0 +1,180 @@
+/* ============================================================
+   Global base styles — matched to _reference/home.html.
+   Values sourced from Thim theme + Elementor Kit 497.
+   ============================================================ */
+
+@import './tokens.css';
+
+/* ---- Reset / normalize ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  /* Clip horizontal overflow from full-bleed (100vw) sections at the
+     document level. `clip` doesn't create a scroll container, so the
+     sticky header still sticks. */
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Clip the ~17px horizontal overflow from full-bleed (100vw) sections.
+     `clip` (not `hidden`) does NOT create a scroll container, so the
+     sticky header keeps working. */
+  overflow-x: clip;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5em;
+  font-family: var(--font-heading);
+  color: var(--font-color-title);
+  font-weight: var(--font-weight-title);
+  line-height: 1.25em;
+}
+
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); line-height: 1.5em; }
+h3 { font-size: var(--font-size-h3); }
+
+p {
+  margin: 0 0 1em;
+}
+
+/* ---- Links ---- */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- Container ---- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+@media (max-width: 1024px) {
+  .container { max-width: var(--container-tablet); }
+}
+
+@media (max-width: 767px) {
+  .container { max-width: var(--container-mobile); }
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  text-transform: var(--button-text-transform);
+  padding: 15px 34px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---- Shared page primitives ---- */
+.section-pad {
+  padding: 80px 0;
+}
+.bg-cream {
+  background: var(--color-cream);
+}
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--color-red);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-size: 36px;
+  line-height: 1.25;
+  color: var(--color-accent);
+  margin: 0 0 22px;
+}
+.section-head {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+.prose p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin: 0 0 18px;
+}
+
+@media (max-width: 767px) {
+  .section-pad { padding: 52px 0; }
+  .section-title { font-size: 28px; }
+}
+
+/* ---- Utility ---- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
