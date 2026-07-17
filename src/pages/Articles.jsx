@@ -23,7 +23,7 @@ export default function Articles() {
         <nav className={styles.breadcrumb} aria-label="Breadcrumb">
           <Link to="/">Home</Link>
           <span>/</span>
-          <span aria-current="page">Articles</span>
+          <span aria-current="page">Events</span>
         </nav>
       </PageHero>
 

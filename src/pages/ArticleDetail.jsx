@@ -51,7 +51,7 @@ export default function ArticleDetail() {
 
         {article.faqs?.length > 0 && (
           <div className={styles.faqSection}>
-            <p className={styles.faqLabel}>FAQs</p>
+            <p className={styles.faqLabel}>FAQS</p>
             <Accordion items={article.faqs} defaultOpen={0} />
           </div>
         )}
