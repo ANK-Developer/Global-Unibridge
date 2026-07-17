@@ -1,9 +1,10 @@
 /* ---- 2-column hero (boxed gray container) ---- */
+/* Aligned to the 1200px/24px gutter the reference uses for every other section. */
 .heroSection {
-  padding: 10px 15px 0;
+  padding: 10px 0 0;
 }
 .heroBox {
-  max-width: 1152px;
+  max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
   background: var(--color-grey-50);
@@ -47,17 +48,18 @@
   display: block;
 }
 
+/* Reference .lp-content-area: 1200px / 48px 24px 64px, copy capped at 900px. */
 .bodySection {
-  padding: 56px 15px;
+  padding: 0;
 }
 .contentWrap {
-  max-width: 1152px;
+  max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 24px;
+  padding: 48px 24px 64px;
 }
 .content {
-  max-width: 100%;
+  max-width: 900px;
   margin: 0;
 }
 .block {
@@ -65,176 +67,259 @@
 }
 .block:last-child { margin-bottom: 0; }
 
-/* Two-column block: text left, image right */
+/* Two-column block — reference .feature-content / .content-left / .feature-img */
 .blockSplit {
-  display: grid;
-  grid-template-columns: 1fr 0.82fr;
-  gap: 44px;
-  align-items: center;
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+.blockText {
+  flex: 0 0 55%;
+  max-width: 550px;
 }
 .blockText > :last-child { margin-bottom: 0; }
+.blockImg {
+  flex: 0 0 400px;
+}
 .blockImg img {
   width: 100%;
   border-radius: 14px;
   display: block;
 }
+/* Feature headings run larger, and their copy is justified. */
+.blockSplit .blockTitle { font-size: 35px; }
+.blockSplit .blockAfter,
+.blockSplit .uspP { text-align: justify; }
+/* Body copy — reference .collection-description h3/h5/p/ul/li. */
 .blockTitle {
   font-size: 26px;
-  line-height: 1.3;
-  color: var(--color-accent);
-  margin: 0 0 16px;
+  line-height: 1.4;
+  color: #182c59;
+  font-weight: 700;
+  margin: 36px 0 14px;
 }
-.blockSub {
-  font-size: 17px;
+.block:first-child .blockTitle { margin-top: 0; }
+.blockTitleSm {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #182c59;
   font-weight: 600;
-  color: var(--color-primary);
-  margin: 0 0 18px;
+  margin: 24px 0 10px;
+}
+.block:first-child .blockTitleSm { margin-top: 0; }
+/* h5 lead-in inside feature blocks. */
+.blockSubHead {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #182c59;
+  font-weight: 600;
+  margin: 24px 0 10px;
 }
 .blockAfter {
   font-size: 16px;
   line-height: 1.8;
-  color: var(--color-text);
-  margin: 16px 0 0;
+  color: #555;
+  margin: 0 0 16px;
 }
 
 .checkList {
   list-style: disc;
-  margin: 0;
-  padding-left: 22px;
-  display: grid;
-  gap: 8px;
+  margin: 0 0 20px;
+  padding-left: 24px;
 }
 .checkList li {
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 4px;
 }
 
 .uspP {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
-  color: var(--color-text);
+  color: #555;
   margin: 0 0 16px;
 }
 .usp .checkList {
   margin-top: 8px;
 }
+/* Reference styles <strong> only with the browser-default bold — it inherits the
+   surrounding #555 body colour, so don't recolour it. */
+.content strong {
+  font-weight: 700;
+}
 
-/* Why Choose Us */
-.whyGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+/* Why Choose Us — reference .partner-section */
+.partnerSection {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+  overflow: hidden;
 }
-.whyCard {
-  background: var(--color-white);
-  border: 1px solid var(--color-grey-100);
-  border-radius: 12px;
-  padding: 28px 22px;
+.partnerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+.sectionHeader {
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 850px;
+  margin: 0 auto 70px;
 }
-.whyCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(24, 44, 89, 0.12);
+.tag {
+  display: inline-block;
+  padding: 8px 18px;
+  color: red;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
-.whyIcon {
-  font-size: 34px;
-  display: block;
-  margin-bottom: 14px;
+.sectionHeader h2 {
+  font-size: 48px;
+  color: #182c59;
+  font-weight: 700;
+  margin: 0 0 20px;
 }
-.whyCard h3 {
+.sectionHeader p {
   font-size: 18px;
-  color: var(--color-accent);
-  margin: 0 0 10px;
-}
-.whyCard p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--color-text);
+  line-height: 1.8;
+  color: #666;
   margin: 0;
 }
+.strengthGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.strengthCard {
+  background: #fff;
+  padding: 35px;
+  border-radius: 20px;
+  border: 1px solid #edf1f7;
+  position: relative;
+  overflow: hidden;
+  transition: 0.6s;
+}
+/* Left rail that wipes downward on hover. */
+.strengthCard::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 0;
+  background: #182c59;
+  transition: 0.4s;
+}
+.strengthCard:hover::before { height: 100%; }
+.strengthCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(24, 44, 89, 0.12);
+}
+.icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(24, 44, 89, 0.08);
+  color: #182c59;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.strengthCard h3 {
+  font-size: 22px;
+  color: #182c59;
+  margin: 0 0 12px;
+}
+.strengthCard p {
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* CTA button (article-cta-section) */
 .ctaSection {
+  margin-top: 30px;
   text-align: center;
-  padding: 6px 15px 54px;
 }
 .ctaBtn {
   display: inline-block;
-  background: var(--color-primary);
+  background: #182c59;
   color: #fff;
   font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 16px;
-  padding: 15px 40px;
-  border-radius: 999px;
-  transition: background 0.25s ease;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 14px 38px;
+  border-radius: 40px;
+  transition: 0.3s ease;
 }
-.ctaBtn:hover { background: var(--color-accent); color: #fff; }
+.ctaBtn:hover { background: #27457f; color: #fff; }
 
-/* Collection grid ("What We Do" / "Related Services") */
+/* Collection grid ("What We Do" / "Related Services") — reference .collection-related */
 .relatedSection {
-  padding: 0 15px 64px;
+  max-width: 1200px;
+  margin: 60px auto 64px;
+  padding: 40px 20px 0;
+  border-top: 1px solid #edf1f7;
+  box-sizing: border-box;
 }
 .relatedTitle {
-  margin: 0 0 28px;
-  font-size: 26px;
+  text-align: center;
+  font-size: 28px;
   color: #182c59;
+  font-weight: 700;
+  margin: 0 0 24px;
 }
 .relatedGrid {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
 }
 .relatedCard {
   display: flex;
   flex-direction: column;
   background: #fff;
-  border: 1px solid var(--color-grey-100);
-  border-radius: 14px;
+  border: 1px solid #e2e0db;
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s;
 }
+/* Reference lifts nothing and zooms nothing — shadow only. */
 .relatedCard:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(24, 44, 89, 0.12);
+  box-shadow: 0 8px 24px rgba(24, 44, 89, 0.1);
 }
 .relatedImg {
   display: block;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
 }
 .relatedImg img {
   width: 100%;
-  height: 100%;
+  height: 180px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
-}
-.relatedCard:hover .relatedImg img {
-  transform: scale(1.05);
 }
 .relatedContent {
-  padding: 20px 20px 24px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 .relatedContent h4 {
-  font-size: 17px;
-  line-height: 1.35;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.4;
   margin: 0 0 10px;
 }
-.relatedContent h4 a { color: var(--color-accent); }
-.relatedContent h4 a:hover { color: var(--color-red); }
+.relatedContent h4 a { color: #182c59; }
 .relatedContent p {
   font-size: 14px;
-  line-height: 1.6;
-  color: var(--color-text);
-  margin: 0 0 16px;
+  line-height: 1.8;
+  color: #666;
+  margin: 0 0 12px;
 }
 .relatedMore {
   margin-top: auto;
@@ -243,25 +328,50 @@
   font-weight: 600;
   font-size: 14px;
   color: var(--color-primary);
+  text-decoration: none;
 }
-.relatedMore:hover { color: var(--color-red); }
+.relatedMore:hover { text-decoration: underline; }
 
+/* FAQ — reference .faq-section (no background block). */
+.faqSection {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.faqHead {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.faqHead p {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: red;
+  margin: 0;
+}
 .faqWrap {
-  max-width: 860px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {
-  .whyGrid { grid-template-columns: repeat(2, 1fr); }
-  .relatedGrid { grid-template-columns: repeat(2, 1fr); }
+  .strengthGrid { grid-template-columns: repeat(2, 1fr); }
   .heroWrap { grid-template-columns: 1fr; }
 }
 @media (max-width: 900px) {
-  .blockSplit { grid-template-columns: 1fr; gap: 24px; }
+  .blockSplit { flex-direction: column; gap: 24px; }
+  .blockText { flex: 0 0 100%; max-width: 100%; }
+  .blockImg { flex: 0 0 100%; width: 100%; }
+  .blockSplit .blockTitle { font-size: 26px; }
+}
+@media (max-width: 768px) {
+  .sectionHeader h2 { font-size: 34px; }
 }
 @media (max-width: 767px) {
-  .whyGrid { grid-template-columns: 1fr; }
-  .relatedGrid { grid-template-columns: 1fr; }
+  .partnerSection { padding: 60px 0; }
+  .sectionHeader { margin-bottom: 40px; }
+  .strengthGrid { grid-template-columns: 1fr; }
   .usp { padding: 26px; }
   .blockTitle { font-size: 22px; }
 }

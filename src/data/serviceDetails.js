@@ -32,6 +32,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Our TNE Support Services Include:',
+        heading: 'small',
         items: [
           'Twinning Programs',
           'Semester Exchange Programs',
@@ -62,17 +63,17 @@ export const serviceDetails = {
         title: 'Our USP: Enabling Global Expansion through Strategic Indian Partnerships',
         paragraphs: [
           'Thousands of universities and higher education institutions across India aspire to establish international collaborations and expand their global footprint. However, many are unable to pursue these opportunities due to challenges such as limited international networks, lack of institutional partnerships, budget constraints, regulatory complexities, insufficient market knowledge, operational limitations, and uncertainty about where or how to begin.',
-          'Global Unibridge bridges this gap.',
-          'Leveraging our extensive network of 10,000+ universities, colleges, and educational institutions across India, we identify, connect, and facilitate high-potential academic partnerships between Indian and international institutions. We work alongside both parties to design mutually beneficial collaboration models, support regulatory and operational processes, and create sustainable pathways for long-term success.',
+          '**Global Unibridge bridges this gap.**',
+          'Leveraging our extensive network of **10,000+ universities, colleges, and educational institutions across India**, we identify, connect, and facilitate high-potential academic partnerships between Indian and international institutions. We work alongside both parties to design mutually beneficial collaboration models, support regulatory and operational processes, and create sustainable pathways for long-term success.',
           'Rather than expecting institutions to navigate complex cross-border partnerships independently, we provide the expertise, local presence, strategic guidance, and ecosystem access needed to transform global ambitions into practical, scalable, and compliant collaborations.',
           'Whether the objective is to establish twinning programs, dual degrees, and semester exchanges, institutional partnerships, or future branch campuses, Global Unibridge serves as the trusted partner that simplifies expansion and accelerates international growth.',
         ],
         items: [
-          '10,000+ Institutional Network – Access to a vast network of universities and educational institutions across India.',
-          'End-to-End TNE Support – From partner identification to execution and compliance.',
-          'Cost-Effective Global Expansion – Expand internationally without significant upfront investment.',
-          'Strategic Partnership Facilitation – We connect the right institutions for long-term academic collaboration.',
-          'Local Expertise, Global Vision – On-ground support to simplify entry and growth in the Indian education ecosystem.',
+          '**10,000+ Institutional Network** – Access to a vast network of universities and educational institutions across India.',
+          '**End-to-End TNE Support** – From partner identification to execution and compliance.',
+          '**Cost-Effective Global Expansion** – Expand internationally without significant upfront investment.',
+          '**Strategic Partnership Facilitation** – We connect the right institutions for long-term academic collaboration.',
+          '**Local Expertise, Global Vision** – On-ground support to simplify entry and growth in the Indian education ecosystem.',
         ],
       },
       {
@@ -81,7 +82,7 @@ export const serviceDetails = {
         paragraphs: [
           'Many universities and higher education institutions around the world are interested in collaborating with Indian institutions, but turning that interest into a successful partnership is often challenging. Identifying the right partner, understanding regulatory requirements, navigating institutional processes, and building trust across borders require significant time, resources, and local expertise.',
           'Similarly, many Indian universities are actively looking for international collaborations to enhance academic offerings, create global opportunities for students, and strengthen their institutional profile. However, they often face difficulties in identifying suitable overseas partners and initiating structured discussions.',
-          'Global Unibridge acts as a bridge between these institutions.',
+          '**Global Unibridge acts as a bridge between these institutions.**',
           'With an extensive network of universities, colleges, and educational organizations across India, we help institutions connect with compatible partners based on their academic goals, strategic priorities, and long-term vision. Beyond introductions, we support both parties throughout the partnership journey—from initial engagement and opportunity assessment to collaboration planning and implementation support.',
           'Our focus is not simply on creating partnerships but on helping institutions establish collaborations that are practical, sustainable, and aligned with their objectives. Whether the goal is to develop dual degree programs, student and faculty mobility initiatives, research collaborations, twinning arrangements, or other transnational education models, we provide local market knowledge and strategic guidance to make the process more efficient.',
         ],
@@ -90,11 +91,11 @@ export const serviceDetails = {
         type: 'list',
         title: 'Why Institutions Work With Global Unibridge',
         items: [
-          'Strong Institutional Network Across India – Access to a broad ecosystem of universities, colleges, and education stakeholders to identify suitable collaboration opportunities.',
-          'Partner Identification and Matchmaking – We help institutions connect with partners that align with their academic strengths, strategic goals, and areas of interest.',
-          'Local Market Expertise – Our understanding of the Indian higher education landscape helps institutions navigate opportunities and challenges more effectively.',
-          'Implementation Support – We assist with stakeholder coordination, partnership development, and execution to keep projects moving forward.',
-          'Long-Term Collaboration Focus – We aim to facilitate partnerships that create lasting academic value for institutions, students, and faculty rather than one-time engagements.',
+          '**Strong Institutional Network Across India** – Access to a broad ecosystem of universities, colleges, and education stakeholders to identify suitable collaboration opportunities.',
+          '**Partner Identification and Matchmaking** – We help institutions connect with partners that align with their academic strengths, strategic goals, and areas of interest.',
+          '**Local Market Expertise** – Our understanding of the Indian higher education landscape helps institutions navigate opportunities and challenges more effectively.',
+          '**Implementation Support** – We assist with stakeholder coordination, partnership development, and execution to keep projects moving forward.',
+          '**Long-Term Collaboration Focus** – We aim to facilitate partnerships that create lasting academic value for institutions, students, and faculty rather than one-time engagements.',
         ],
       },
     ],
@@ -122,6 +123,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Our Market Entry Services Include:',
+        heading: 'small',
         items: [
           'Twinning Programs',
           'Semester Exchange Programs',
@@ -135,6 +137,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Your India Presence — Without the Operational Burden',
+        heading: 'small',
         subtitle: 'Our team professionally represents your institution across:',
         items: [
           'Student Engagement Activities',
@@ -173,6 +176,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Market Presence Activities Include:',
+        heading: 'small',
         items: [
           'Education Fairs & Recruitment Events',
           'Institutional Representation Activities',
@@ -198,6 +202,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Key Features of Our B2B2C Connect Model:',
+        heading: 'small',
         items: [
           'AI-Enabled Student Engagement Systems',
           'Peer-to-Peer Mentorship Platforms',
@@ -242,6 +247,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Key Advantages of the Agency Model:',
+        heading: 'small',
         items: [
           'Performance-Based Success Fee Structure',
           'No Large Upfront Operational Investment',
@@ -255,6 +261,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Activities Under the Agency Model:',
+        heading: 'small',
         items: [
           'Career & Education Fairs',
           'University Roadshows',
@@ -268,6 +275,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Comprehensive Student Support Ecosystem',
+        heading: 'small',
         subtitle: 'Our integrated recruitment ecosystem also supports students through:',
         items: [
           'University Selection Guidance',
@@ -303,6 +311,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Our E-Learning Services Include:',
+        heading: 'small',
         items: [
           'Distribution of Online Degrees, Diplomas & Certificate Programs',
           'Joint Program Development & Promotion',
@@ -317,6 +326,7 @@ export const serviceDetails = {
       {
         type: 'list',
         title: 'Content & Learning Development',
+        heading: 'small',
         subtitle: 'We support universities in creating engaging academic content across multiple formats, including',
         items: [
           'Text-Based Learning Modules',
