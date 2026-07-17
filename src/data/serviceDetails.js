@@ -22,7 +22,7 @@ export const serviceDetails = {
   tne: {
     slug: 'tne',
     breadcrumb: 'Transnational Education (TNE) Support',
-    image: '/images/service-tne.jpg',
+    image: '/images/service-tne.webp',
     title: 'Building Sustainable Academic Partnerships in India',
     intro: [
       'Transnational Education (TNE) has emerged as one of the most significant opportunities for international institutions seeking long-term growth in India. With increasing support from government policies and institutional collaborations, universities now have the opportunity to build sustainable academic ecosystems within the Indian market.',
@@ -111,7 +111,7 @@ export const serviceDetails = {
   'india-market-entry': {
     slug: 'india-market-entry',
     breadcrumb: 'India Market Entry Solutions',
-    image: '/images/service-market-entry.jpg',
+    image: '/images/service-market-entry.webp',
     title: 'Strategic India Market Entry for Universities & Institutions',
     intro: [
       "Global Unibridge's Market Entry Solutions are significantly different from traditional market offerings. We provide a hybrid support model that combines physical on-ground representation with technology-driven outreach solutions.",
@@ -237,7 +237,7 @@ export const serviceDetails = {
   'agency-recruitment-model': {
     slug: 'agency-recruitment-model',
     breadcrumb: 'Agency Recruitment Model',
-    image: '/images/service-agency.jpg',
+    image: '/images/service-agency.webp',
     title: 'Scalable Student Recruitment Through Trusted Local Networks',
     intro: [
       'The Agency Recruitment Model remains one of the most effective and widely adopted international student recruitment strategies globally. It enables institutions to achieve rapid market penetration, localized student support, and scalable recruitment outcomes with optimized operational investment.',
@@ -302,7 +302,7 @@ export const serviceDetails = {
   'e-learning': {
     slug: 'e-learning',
     breadcrumb: 'E-Learning & Digital Education Solutions',
-    image: '/images/service-elearning.jpg',
+    image: '/images/service-elearning.webp',
     title: 'Supporting Universities in the Future of Digital Learning',
     intro: [
       'Global Unibridge actively supports institutions in expanding their digital education capabilities through strategic e-learning partnerships, content development, and online program distribution.',

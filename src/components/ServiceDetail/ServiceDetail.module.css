@@ -73,21 +73,24 @@
   align-items: flex-start;
   gap: 50px;
 }
-/* Reference bases these at 55% / 400px, but 55% + 50px gap + 400px overflows the
-   900px copy column — allow both to shrink so the image stays inside the column. */
+/* 55% + 50px gap + 400px intentionally overruns the 900px copy column: the image
+   is offset past it into the 1200px content area, as the reference lays it out. */
 .blockText {
-  flex: 0 1 55%;
+  flex: 0 0 55%;
   max-width: 550px;
   min-width: 0;
 }
 .blockText > :last-child { margin-bottom: 0; }
 .blockImg {
-  flex: 0 1 400px;
-  min-width: 0;
+  flex: 0 0 400px;
 }
 .blockImg img {
   width: 100%;
-  border-radius: 14px;
+  height: 225px;
+  object-fit: cover;
+  margin-left: 150px;
+  margin-top: 50px;
+  border-radius: 12px;
   display: block;
 }
 /* Feature headings run larger, and their copy is justified. */
@@ -369,6 +372,7 @@
   .blockSplit { flex-direction: column; gap: 24px; }
   .blockText { flex: 0 0 100%; max-width: 100%; }
   .blockImg { flex: 0 0 100%; width: 100%; }
+  .blockImg img { margin: 0; height: auto; }
   .blockSplit .blockTitle { font-size: 26px; }
 }
 @media (max-width: 768px) {

@@ -92,11 +92,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className={styles.bottom}>
+      {/* <div className={styles.bottom}>
         <div className="container">
           <p>© 2026 GUB. All Rights Reserved.</p>
         </div>
-      </div>
+      </div> */}
     </footer>
   )
 }
