@@ -168,119 +168,119 @@ export const events = [
 
     partners: [
       {
-        name: "School Educational Fair 1",
+        name: "School Educational Fair Image 1",
         logo: "/images/events/School Educational Fair/image1.jpeg",
       },
       {
-        name: "School Educational Fair 2",
+        name: "School Educational Fair Image 2",
         logo: "/images/events/School Educational Fair/image2.jpeg",
       },
       {
-        name: "School Educational Fair 3",
+        name: "School Educational Fair Image 3",
         logo: "/images/events/School Educational Fair/image3.jpeg",
       },
       {
-        name: "School Educational Fair 4",
+        name: "School Educational Fair Image 4",
         logo: "/images/events/School Educational Fair/image4.jpeg",
       },
       {
-        name: "School Educational Fair 5",
+        name: "School Educational Fair Image 5",
         logo: "/images/events/School Educational Fair/image5.jpeg",
       },
       {
-        name: "School Educational Fair 6",
+        name: "School Educational Fair Image 6",
         logo: "/images/events/School Educational Fair/image6.jpeg",
       },
       {
-        name: "School Educational Fair 7",
+        name: "School Educational Fair Image 7",
         logo: "/images/events/School Educational Fair/image7.jpeg",
       },
       {
-        name: "School Educational Fair 8",
+        name: "School Educational Fair Image 8",
         logo: "/images/events/School Educational Fair/image8.jpeg",
       },
       {
-        name: "School Educational Fair 9",
+        name: "School Educational Fair Image 9",
         logo: "/images/events/School Educational Fair/image9.jpeg",
       },
       {
-        name: "School Educational Fair 10", 
+        name: "School Educational Fair Image 10", 
         logo: "/images/events/School Educational Fair/image10.jpeg",
       },
       {
-        name: "School Educational Fair 11",
+        name: "School Educational Fair Image 11",
         logo: "/images/events/School Educational Fair/image11.jpeg",
       },
       {
-        name: "School Educational Fair 12",
+        name: "School Educational Fair Image 12",
         logo: "/images/events/School Educational Fair/image12.jpeg",
       },
       {
-        name: "School Educational Fair 13",
+        name: "School Educational Fair Image 13",
         logo: "/images/events/School Educational Fair/image13.jpeg",
       },
       {
-        name: "School Educational Fair 14",
+        name: "School Educational Fair Image 14",
         logo: "/images/events/School Educational Fair/image14.jpeg",
       },
       {
-        name: "School Educational Fair 15",
+        name: "School Educational Fair Image 15",
         logo: "/images/events/School Educational Fair/image15.jpeg",
       },
       {
-        name: "School Educational Fair 16",
+        name: "School Educational Fair Image 16",
         logo: "/images/events/School Educational Fair/image16.jpeg",
       },
       {
-        name: "School Educational Fair 17",
+        name: "School Educational Fair Image 17",
         logo: "/images/events/School Educational Fair/image17.jpeg",
       },
       {
-        name: "School Educational Fair 18",
+        name: "School Educational Fair Image 18",
         logo: "/images/events/School Educational Fair/image18.jpeg",
       },
       {
-        name: "School Educational Fair 19",
+        name: "School Educational Fair Image 19",
         logo: "/images/events/School Educational Fair/image19.jpeg",
       },
       {
-        name: "School Educational Fair 20",
+        name: "School Educational Fair Image 20",
         logo: "/images/events/School Educational Fair/image20.jpeg",
       },
       {
-        name: "School Educational Fair 21",
+        name: "School Educational Fair Image 21",
         logo: "/images/events/School Educational Fair/image21.jpeg",
       },
       {
-        name: "School Educational Fair 22",
+        name: "School Educational Fair Image 22",
         logo: "/images/events/School Educational Fair/image22.jpeg",
       },
       {
-        name: "School Educational Fair 23",
+        name: "School Educational Fair Image 23",
         logo: "/images/events/School Educational Fair/image23.jpeg",
       },
       {
-        name: "School Educational Fair 24",
+        name: "School Educational Fair Image 24",
         logo: "/images/events/School Educational Fair/image24.jpeg",
       },
       {
-        name: "School Educational Fair 25",
+        name: "School Educational Fair Image 25",
         logo: "/images/events/School Educational Fair/image25.jpeg",
       },
       {
-        name: "School Educational Fair 26",
+        name: "School Educational Fair Image 26",
         logo: "/images/events/School Educational Fair/image26.jpeg",
       },
       {
-        name: "School Educational Fair 27",
+        name: "School Educational Fair Image 27",
         logo: "/images/events/School Educational Fair/image27.jpeg",
       },
       {
-        name: "School Educational Fair 28",
+        name: "School Educational Fair Image 28",
         logo: "/images/events/School Educational Fair/image28.jpeg",
       },
       {
-        name: "School Educational Fair 29",
+        name: "School Educational Fair Image 29",
         logo: "/images/events/School Educational Fair/image29.jpeg",
       }
 
