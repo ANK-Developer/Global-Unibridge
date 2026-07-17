@@ -1,82 +1,156 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
-import PageHero from '../components/PageHero/PageHero.jsx'
-import { events, eventCategories } from '../data/events.js'
-import styles from './Events.module.css'
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import PageHero from "../components/PageHero/PageHero.jsx";
+import { events } from "../data/events.js";
+import styles from "./Events.module.css";
 
-// Flatten every event's partner logos into a single filterable gallery,
-// matching the reference /event isotope grid (square logo tiles, 3 per row).
 const galleryItems = events.flatMap((e) =>
-  e.partners.map((p) => ({ ...p, category: e.category, event: e.title }))
-)
+  e.partners.map((p) => ({
+    ...p,
+    category: e.category,
+    year: e.year,
+    event: e.title,
+  }))
+);
 
 export default function Events() {
-  const [filter, setFilter] = useState('All')
-  const [lightbox, setLightbox] = useState(null)
+  const [filter, setFilter] = useState("All");
+  const [selectedYear, setSelectedYear] = useState("All");
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
 
-  const shown =
-    filter === 'All' ? galleryItems : galleryItems.filter((p) => p.category === filter)
+  const years = [
+    ...new Set(
+      events
+        .filter((e) => e.category === filter)
+        .map((e) => e.year)
+    ),
+  ].sort((a, b) => b.localeCompare(a));
 
-  // Close the lightbox on Escape and lock body scroll while it is open.
+  const shown = galleryItems.filter((item) => {
+    if (filter === "All") return true;
+    if (item.category !== filter) return false;
+    if (selectedYear !== "All" && item.year !== selectedYear) return false;
+    return true;
+  });
+
   useEffect(() => {
-    if (!lightbox) return undefined
-    const onKey = (e) => e.key === 'Escape' && setLightbox(null)
-    document.addEventListener('keydown', onKey)
-    document.body.style.overflow = 'hidden'
+    if (!lightbox) return;
+
+    const onKey = (e) => e.key === "Escape" && setLightbox(null);
+
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+
     return () => {
-      document.removeEventListener('keydown', onKey)
-      document.body.style.overflow = ''
-    }
-  }, [lightbox])
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightbox]);
+
+  const changeCategory = (category) => {
+    setFilter(category);
+    setSelectedYear("All");
+    setShowDropdown(false);
+  };
 
   return (
     <>
       <Helmet>
         <title>Events — Global Unibridge</title>
-        <meta name="description" content="Upcoming events, education fairs, and engagement activities from Global Unibridge." />
       </Helmet>
 
       <PageHero heading="Event">
-        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+        <nav className={styles.breadcrumb}>
           <Link to="/">Home</Link>
           <span>/</span>
-          <span aria-current="page">Events</span>
+          <span>Events</span>
         </nav>
       </PageHero>
 
       <section className="section-pad">
         <div className="container">
-          <div className={styles.filters} role="tablist" aria-label="Event categories">
-            {eventCategories.map((c) => (
+
+          <div className={styles.filterContainer}>
+            <div className={styles.filters}>
+
               <button
-                key={c}
-                type="button"
-                role="tab"
-                aria-selected={filter === c}
-                className={`${styles.filter} ${filter === c ? styles.filterActive : ''}`}
-                onClick={() => setFilter(c)}
+                className={`${styles.filter} ${filter === "All" ? styles.filterActive : ""}`}
+                onClick={() => changeCategory("All")}
               >
-                {c}
+                All
               </button>
-            ))}
+
+              {["NAFSA", "ICEF", "EDUCATIONAL"].map((category) => (
+                <div key={category} className={styles.dropdownWrapper}>
+                  <button
+                    className={`${styles.filter} ${filter === category ? styles.filterActive : ""}`}
+                    onClick={() => {
+                      if (filter !== category) {
+                        changeCategory(category);
+                      }
+                      setShowDropdown(showDropdown === category ? false : category);
+                    }}
+                  >
+                    <>
+                      <span>{category}</span>
+                      {/* <span className={styles.arrow}>▼</span> */}
+                    </>
+                  </button>
+
+                  {showDropdown === category && (
+                    <div className={styles.dropdown}>
+                      {/* <button
+                        onClick={() => {
+                          setSelectedYear("All");
+                          setShowDropdown(false);
+                        }}
+                      >
+                        All
+                      </button> */}
+
+                      {years.map((year) => (
+                        <button
+                          key={year}
+                          onClick={() => {
+                            setSelectedYear(year);
+                            setShowDropdown(false);
+                          }}
+                        >
+                          {year}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           {shown.length === 0 ? (
-            <p className={styles.empty}>No events in this category yet. Please check back soon.</p>
+            <p className={styles.empty}>No events found.</p>
           ) : (
             <div className={styles.grid}>
-              {shown.map((p, i) => (
+              {shown.map((item, i) => (
                 <button
-                  key={`${p.event}-${p.name}-${i}`}
-                  type="button"
+                  key={i}
                   className={styles.tile}
-                  onClick={() => setLightbox(p)}
-                  aria-label={`View ${p.name}`}
+                  onClick={() => setLightbox(item)}
                 >
-                  <img src={p.logo} alt={p.name} loading="lazy" width="440" height="440" />
-                  <span className={styles.overlay} aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <img
+                    src={item.logo}
+                    alt={item.name}
+                    loading="lazy"
+                  />
+
+                  <span className={styles.overlay}>
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
                       <circle cx="11" cy="11" r="7" />
                       <line x1="16.5" y1="16.5" x2="21" y2="21" />
                       <line x1="11" y1="8" x2="11" y2="14" />
@@ -87,22 +161,32 @@ export default function Events() {
               ))}
             </div>
           )}
+
         </div>
       </section>
 
       {lightbox && (
         <div
           className={styles.lightbox}
-          role="dialog"
-          aria-modal="true"
-          aria-label={lightbox.name}
           onClick={() => setLightbox(null)}
         >
-          <button type="button" className={styles.lightboxClose} aria-label="Close" onClick={() => setLightbox(null)}>
+          <button
+            className={styles.lightboxClose}
+            onClick={() => setLightbox(null)}
+          >
             ×
           </button>
-          <figure className={styles.lightboxFigure} onClick={(e) => e.stopPropagation()}>
-            <img src={lightbox.logo} alt={lightbox.name} className={styles.lightboxImg} />
+
+          <figure
+            className={styles.lightboxFigure}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={lightbox.logo}
+              alt={lightbox.name}
+              className={styles.lightboxImg}
+            />
+
             <figcaption className={styles.lightboxCaption}>
               <strong>{lightbox.name}</strong>
               <span>{lightbox.event}</span>
@@ -111,5 +195,5 @@ export default function Events() {
         </div>
       )}
     </>
-  )
+  );
 }
