@@ -35,8 +35,8 @@
   position: relative;
   transition: color 0.3s ease;
 }
-.filter:hover { color: #a67b5b; }
-.filterActive { color: #a67b5b; }
+.filter:hover { color: #182c59; }
+.filterActive { color: #182c59; }
 .filterActive::after {
   content: "";
   position: absolute;
