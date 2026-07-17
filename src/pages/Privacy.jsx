@@ -169,7 +169,7 @@ const PrivacyPolicy = () => {
         <p>
           <strong>Global Unibridge</strong>
           <br />
-          📞 +91 7042464490
+          📞 +91 9971822466
         </p>
 
         {/* <p className="footer-text">

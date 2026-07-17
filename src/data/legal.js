@@ -34,5 +34,5 @@ export const termsSections = [
   { title: '9. Account Suspension or Termination', paragraphs: ['Global Unibridge reserves the right to suspend, restrict, or terminate access to any user account without prior notice if any violation of these Terms & Conditions is identified.'] },
   { title: '10. Modifications to Terms', paragraphs: ['We reserve the right to update or modify these Terms & Conditions at any time without prior notice. Continued use of the website after changes are posted constitutes acceptance of the revised terms.'] },
   { title: '11. Governing Law', paragraphs: ['These Terms & Conditions shall be governed and interpreted in accordance with the laws of India. Any disputes arising from the use of this website shall fall under the jurisdiction of the appropriate courts in India.'] },
-  { title: '12. Contact Information', paragraphs: ['If you have any questions regarding these Terms & Conditions, please contact us:', 'Global Unibridge', '📞 +91 7042464490'] },
+  { title: '12. Contact Information', paragraphs: ['If you have any questions regarding these Terms & Conditions, please contact us:', 'Global Unibridge', '📞 +91 9971822466'] },
 ]
