@@ -100,7 +100,7 @@ export default function HowWeWork() {
       </section>
 
       {/* Our Process: heading occupies the first grid cell */}
-      <section className="section-pad bg-cream">
+      <section className="section-pad bg-white">
         <div className="container">
           <div className={styles.processGrid}>
             <div className={styles.processHeadCell}>
