@@ -4,9 +4,38 @@
   z-index: 100;
   background: var(--color-primary);
   transition: box-shadow 0.25s ease, background 0.25s ease;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 .scrolled {
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* White header for all non-home pages (reference: white bg, #000 menu text,
+   logo blackened via filter:brightness(0)). */
+.light {
+  background: #fff;
+  border-bottom: 1px solid var(--color-grey-100);
+}
+.light.scrolled {
+  box-shadow: 0 2px 18px rgba(24, 44, 89, 0.12);
+}
+.light .navLink {
+  color: var(--color-accent);
+}
+.light .navLink:hover {
+  color: var(--color-red);
+}
+.light .active {
+  color: var(--color-primary);
+}
+.light .logo img {
+  filter: brightness(0);
+}
+.light .logoText {
+  color: var(--color-accent);
+}
+.light .hamburger span {
+  background: var(--color-accent);
 }
 
 .inner {
@@ -23,7 +52,7 @@
   flex-shrink: 0;
 }
 .logo img {
-  height: 68px;
+  height: 91px;
   width: auto;
 }
 /* Text fallback shown until the real logo PNG is dropped in /public/images */

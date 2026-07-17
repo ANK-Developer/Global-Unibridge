@@ -8,6 +8,7 @@ import {
 import styles from './About.module.css'
 
 const COUNTRIES = 'United States, Canada, United Kingdom, Australia, Germany, Ireland, and New Zealand'
+const BRANDS = 'Visa House, JenNext Mentors, Vidhya Villa, IMS Noida, and Schiller Institute Sr. Sec. School, Ghaziabad.'
 
 // Custom FAQ accordion matching the source .faq-section (navy circle+ icon,
 // rotates 45° and turns red #ff1803 when open).
@@ -59,6 +60,7 @@ export default function About() {
       <PageHero
         eyebrow={aboutHero.eyebrow}
         heading={aboutHero.heading}
+        headingStyle={{ color: '#111' }}
         paragraphs={[intro]}
       />
 
@@ -69,7 +71,13 @@ export default function About() {
             <img src="/images/about/about-banner-real.webp" alt="Global Unibridge team" loading="lazy" />
           </div>
           <div className={styles.bodyProse}>
-            {bodyParas.map((p, i) => (<p key={i}>{p}</p>))}
+            {bodyParas.map((p, i) => {
+              if (p.includes(BRANDS)) {
+                const [before, after] = p.split(BRANDS)
+                return <p key={i}>{before}<strong className={styles.brands}>{BRANDS}</strong>{after}</p>
+              }
+              return <p key={i}>{p}</p>
+            })}
           </div>
         </div>
       </section>
@@ -96,7 +104,7 @@ export default function About() {
       <section className="section-pad">
         <div className="container">
           <div className={styles.split}>
-            <Media src="/images/about-leadership.jpg" alt="Leadership" ratio="4 / 3" />
+            <Media src="/images/about-leadership.jpg" alt="Leadership" ratio="1 / 1" className={styles.leadImg} />
             <div className="prose">
               <h2 className="section-title">{leadership.heading}</h2>
               {leadership.paragraphs.map((p, i) => (<p key={i}>{p}</p>))}

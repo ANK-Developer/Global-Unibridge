@@ -2,16 +2,22 @@
 .bannerSection {
   padding: 0 0 10px;
 }
+/* Banner sits inset from the container edges (reference: div padding+margin 20px). */
 .banner {
-  border-radius: 40px;
-  overflow: hidden;
-  margin-bottom: 34px;
+  padding: 20px;
+  margin: 5px;
 }
 .banner img {
   width: 100%;
   height: 500px;
   object-fit: cover;
   display: block;
+  border-radius: 30px;
+}
+/* Body copy is inset on both sides (reference: padding 0 20px). */
+.bodyProse {
+  padding: 0 20px;
+  margin-bottom: 70px;
 }
 .bodyProse p {
   font-size: 16px;
@@ -20,18 +26,28 @@
   margin: 0 0 16px;
   text-align: justify;
 }
+.brands {
+  font-weight: 700;
+  color: var(--color-accent);
+}
 
 /* ---- What Makes Us Different ---- */
 .diffGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 30px;
 }
 .diffCard {
   background: var(--color-white);
-  border: 1px solid var(--color-grey-100);
-  border-radius: 14px;
-  padding: 30px 22px;
+  border: 1px solid var(--color-beige);
+  border-radius: 16px;
+  padding: 30px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -41,9 +57,8 @@
 }
 .diffIcon {
   display: block;
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 14px;
+  width: 90px;
+  height: 90px;
 }
 .diffCard h3 {
   font-size: 18px;
@@ -54,13 +69,18 @@
 
 .split {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 56px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
   align-items: center;
+}
+.leadImg {
+  border-radius: 20px;
 }
 
 /* ---- Our Global Network (exact: single white wrapper, navy left + cards right) ---- */
 .networkWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
   background: #fff;
   border-radius: 28px;
   overflow: hidden;
@@ -69,51 +89,78 @@
   grid-template-columns: 1fr 1fr;
 }
 .networkLeft {
+  position: relative;
+  overflow: hidden;
   background: #182c59;
   padding: 70px 55px;
   color: #fff;
 }
+.networkLeft::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  top: -80px;
+  right: -80px;
+}
+.networkLeft::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  bottom: -50px;
+  left: -50px;
+}
 .networkLeft h2 {
+  position: relative;
   color: #fff;
-  font-size: 34px;
-  margin: 0 0 22px;
+  font-size: 48px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin: 0 0 24px;
 }
 .networkLeft > p {
-  font-size: 15px;
-  line-height: 1.75;
-  color: #dfe4f2;
-  margin: 0 0 16px;
+  position: relative;
+  font-size: 17px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0 0 22px;
   text-align: justify;
 }
 .countries {
-  color: #ff6b6b;
+  color: #ff1803;
   font-weight: 600;
 }
 .networkBottom {
+  position: relative;
   background: #f8fbff;
   border-left: 5px solid #ff1803;
-  padding: 26px 28px;
+  padding: 28px;
   border-radius: 20px;
-  margin-top: 26px;
 }
 .networkBottom p {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.9;
+  color: #4b5563;
   text-align: justify;
 }
 .networkBottom strong {
   color: var(--color-primary);
 }
 .networkRight {
-  padding: 60px 45px;
+  padding: 70px 55px;
   background: #fff;
 }
 .networkCardGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
+  margin-bottom: 40px;
 }
 .networkCard {
   background: #f7f9ff;
@@ -123,8 +170,9 @@
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 .networkCard:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 34px rgba(24, 44, 89, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(24, 44, 89, 0.08);
+  border-color: #182c59;
 }
 .networkIcon {
   display: flex;
@@ -142,15 +190,15 @@
   display: block;
 }
 .networkCard h4 {
-  font-size: 17px;
-  color: var(--color-accent);
+  font-size: 18px;
+  color: #182c59;
   margin: 0 0 10px;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 .networkCard p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.7;
+  color: #203e7a;
   margin: 0;
   text-align: justify;
 }
@@ -247,12 +295,16 @@
   .networkWrapper { grid-template-columns: 1fr; }
   .networkLeft,
   .networkRight { padding: 40px 28px; }
+  .networkLeft h2 { font-size: 34px; }
 }
 @media (max-width: 767px) {
   .diffGrid { grid-template-columns: 1fr 1fr; }
   .networkCardGrid { grid-template-columns: 1fr; }
   .split { grid-template-columns: 1fr; gap: 32px; }
-  .banner img { height: 220px; }
+  .banner { margin: 8px; padding: 8px; }
+  .banner img { height: 220px; border-radius: 18px; }
+  .bodyProse { padding: 0; }
   .networkLeft,
   .networkRight { padding: 32px 22px; }
+  .networkLeft h2 { font-size: 28px; }
 }

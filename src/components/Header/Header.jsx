@@ -44,8 +44,12 @@ export default function Header() {
   const navClass = ({ isActive }) =>
     isActive ? `${styles.navLink} ${styles.active}` : styles.navLink
 
+  // Home has the dark hero header; every other page uses a white header
+  // (dark text + blackened logo), matching the reference.
+  const isHome = location.pathname === '/'
+
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${isHome ? '' : styles.light}`}>
       <div className={`container ${styles.inner}`}>
         <Link to="/" className={styles.logo} aria-label="Global Unibridge home">
           {logoOk ? (
