@@ -38,6 +38,18 @@ export default function FAQs() {
             {faqData.map((section) => (
               <div key={section.category} className={styles.category}>
                 <h2 className={styles.categoryTitle}>{section.category}</h2>
+          {/* <div className="market-card">
+          <p>
+            India currently has approximately 43.3 million students enrolled in
+            higher education, reflecting a large and continuously expanding
+            learner base. The National Education Policy (NEP) 2020 aims to
+            increase the Gross Enrolment Ratio (GER) to 50% by 2035. India also
+            stands as one of the largest source countries for international
+            students globally — making it a highly attractive market for foreign
+            universities considering expansion.
+          </p>
+        </div> */}
+
                 {groupEntries(section.entries).map((g, gi) => (
                   <div key={gi} className={styles.group}>
                     {g.subheading && <h3 className={styles.subheading}>{g.subheading}</h3>}

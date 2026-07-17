@@ -1,13 +1,15 @@
 /* Article detail — matches the reference custom article page:
    centered title, hero banner, 900px white column, sub-labels + disc lists. */
 .articleHeader {
-  max-width: 900px;
+  max-width: 940px;
+  
+  padding-top:56px ;
   margin: 0 auto;
-  padding: 56px 30px 10px;
+  /* padding: 56px 30px 10px; */
   text-align: center;
 }
 .articleTitle {
- 
+ padding: 0px;
     font-size: 42px;
     font-weight: 700;
     color: #111;
@@ -86,7 +88,7 @@
   color: #ff0000;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 19px;
   letter-spacing: 2px;
   text-align: center;
   margin: 0 0 22px;
@@ -94,7 +96,8 @@
 
 .backWrap {
   margin: 48px auto 0;
-  text-align: center;
+ 
+  text-align: start;
 }
 .back {
   display: inline-block;
