@@ -106,6 +106,9 @@
 }
 .agentRegBtn {
   flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
   color: #0f0f0f;
   padding: 10px 20px;
   border-radius: 40px;
@@ -117,8 +120,135 @@
 }
 .agentRegBtn:hover { color: #dc2626; transform: scale(1.02); }
 
+/* Partner registration — white card, matching the reference .form-section. */
+.formSection {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 28px;
+  width: 100%;
+  align-self: start;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+.formSection .formTitle { color: #0f172a; }
+.formSection .formSub { max-width: none; }
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e5e7eb;
+}
+.tab {
+  background: #1b2f5e;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #94a3c4;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.tab:hover:not(.tabActive) { background: #f0f4fa; color: #1e3a8a; border-color: #b8caf0; }
+.tabActive,
+.tabActive:hover {
+  background: #1e3a8a;
+  border-color: #1e3a8a;
+  color: #fff;
+}
+
+.panelNote {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #6b6b6b;
+  margin: 0 0 16px;
+}
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.req { color: var(--color-danger); }
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+.checkboxGroup { margin-bottom: 14px; }
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+}
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin: 1px 0 0;
+  padding: 0;
+  accent-color: #1e3a8a;
+  cursor: pointer;
+}
+.checkbox input[aria-invalid='true'] { outline: 2px solid var(--color-danger); }
+
+.formNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+/* Square-ish nav buttons on the white card, not the contact form's 40px pills. */
+.formNav .sendBtn {
+  margin: 0;
+  padding: 13px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+.backBtn {
+  background: #f1f5f9;
+  border: none;
+  color: #334155;
+  padding: 13px 24px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.backBtn:hover { background: #e2e8f0; }
+
+/* Inputs on the white card: neutral borders + the reference's blue focus ring. */
+.formSection .inputGroup input,
+.formSection .inputGroup select,
+.formSection .inputGroup textarea {
+  border-color: #d1d5db;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.formSection .inputGroup input:focus,
+.formSection .inputGroup select:focus,
+.formSection .inputGroup textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
 .inputGroup { margin-bottom: 14px; }
 .inputGroup input,
+.inputGroup select,
 .inputGroup textarea {
   width: 100%;
   background: #fff;
@@ -139,7 +269,16 @@
   line-height: 1.5;
   resize: vertical;
 }
+.inputGroup select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231e3a8a' stroke-width='2.4'%3E%3Cpath d='M5 8l7 7 7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+}
 .inputGroup input:focus,
+.inputGroup select:focus,
 .inputGroup textarea:focus { border-color: #1e3a8a; }
 .inputGroup input[aria-invalid='true'],
 .inputGroup textarea[aria-invalid='true'] { border-color: var(--color-danger); }
@@ -233,4 +372,9 @@
   .formHead { flex-direction: column; gap: 10px; }
   .agentRegBtn { width: 100%; text-align: center; }
   .sendBtn { width: 100%; padding: 12px; }
+  .fieldRow { grid-template-columns: 1fr; gap: 0; }
+  .tab { flex: 1 1 auto; padding: 9px 14px; font-size: 0.8rem; }
+  .formNav { flex-direction: column-reverse; gap: 10px; }
+  .formNav .backBtn,
+  .formNav .sendBtn { width: 100%; padding: 12px; }
 }

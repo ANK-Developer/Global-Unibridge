@@ -5,31 +5,49 @@ import { services } from '../../data/services.js'
 import { whyChooseUs } from '../../data/serviceDetails.js'
 import styles from './ServiceDetail.module.css'
 
+// Copy uses **…** to mark the phrases the reference bolds inside body text.
+function Rich({ text }) {
+  return text
+    .split(/\*\*(.+?)\*\*/g)
+    .map((part, i) => (i % 2 ? <strong key={i}>{part}</strong> : part))
+}
+
 function CheckList({ items }) {
   return (
     <ul className={styles.checkList}>
-      {items.map((it) => (<li key={it}>{it}</li>))}
+      {items.map((it) => (<li key={it}><Rich text={it} /></li>))}
     </ul>
   )
+}
+
+// Reference renders most block titles as h3 (26px) and the services list as h5 (18px).
+function BlockTitle({ block }) {
+  return block.heading === 'small'
+    ? <h3 className={styles.blockTitleSm}>{block.title}</h3>
+    : <h2 className={styles.blockTitle}>{block.title}</h2>
 }
 
 function Block({ block }) {
   if (block.type === 'usp') {
     return (
       <div className={`${styles.block} ${styles.usp}`}>
-        <h2 className={styles.blockTitle}>{block.title}</h2>
-        {block.paragraphs.map((p, i) => (<p key={i} className={styles.uspP}>{p}</p>))}
+        <BlockTitle block={block} />
+        {block.paragraphs.map((p, i) => (<p key={i} className={styles.uspP}><Rich text={p} /></p>))}
         {block.items && <CheckList items={block.items} />}
       </div>
     )
   }
   const body = (
     <>
-      <h2 className={styles.blockTitle}>{block.title}</h2>
-      {block.subtitle && <p className={styles.blockSub}>{block.subtitle}</p>}
+      <BlockTitle block={block} />
+      {/* Reference makes the lead-in an h5 inside image blocks, a plain <p> elsewhere. */}
+      {block.subtitle && (block.image
+        ? <h5 className={styles.blockSubHead}>{block.subtitle}</h5>
+        : <p className={styles.blockAfter}>{block.subtitle}</p>
+      )}
       {block.type === 'list' && <CheckList items={block.items} />}
-      {block.paragraphs && block.paragraphs.map((p, i) => (<p key={i} className={styles.blockAfter}>{p}</p>))}
-      {block.after && <p className={styles.blockAfter}>{block.after}</p>}
+      {block.paragraphs && block.paragraphs.map((p, i) => (<p key={i} className={styles.blockAfter}><Rich text={p} /></p>))}
+      {block.after && <p className={styles.blockAfter}><Rich text={block.after} /></p>}
     </>
   )
   // Blocks with an image render as two columns (text left, image right).
@@ -89,18 +107,19 @@ export default function ServiceDetail({ data }) {
         </div>
       </section>
 
-      {/* Why Choose Us (shared) */}
-      <section className="section-pad bg-cream">
-        <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">{whyChooseUs.eyebrow}</span>
-            <h2 className="section-title">{whyChooseUs.heading}</h2>
+      {/* Why Choose Us (shared) — mirrors the reference .partner-section, which uses
+          its own gradient + type scale rather than the global section-pad/bg-cream. */}
+      <section className={styles.partnerSection}>
+        <div className={styles.partnerContainer}>
+          <div className={styles.sectionHeader}>
+            <span className={styles.tag}>{whyChooseUs.eyebrow}</span>
+            <h2>{whyChooseUs.heading}</h2>
             <p>{whyChooseUs.intro}</p>
           </div>
-          <div className={styles.whyGrid}>
+          <div className={styles.strengthGrid}>
             {whyChooseUs.items.map((w) => (
-              <div key={w.title} className={styles.whyCard}>
-                <span className={styles.whyIcon} aria-hidden="true">{w.icon}</span>
+              <div key={w.title} className={styles.strengthCard}>
+                <div className={styles.icon} aria-hidden="true">{w.icon}</div>
                 <h3>{w.title}</h3>
                 <p>{w.text}</p>
               </div>
@@ -137,16 +156,14 @@ export default function ServiceDetail({ data }) {
         </div>
       </section>
 
-      {/* FAQ (optional) */}
+      {/* FAQ (optional) — reference .faq-section: no background, 900px, red eyebrow. */}
       {data.faqs.length > 0 && (
-        <section className="section-pad bg-cream">
-          <div className="container">
-            <div className="section-head">
-              <h2 className="section-title">FAQs</h2>
-            </div>
-            <div className={styles.faqWrap}>
-              <Accordion items={data.faqs} />
-            </div>
+        <section className={styles.faqSection}>
+          <div className={styles.faqHead}>
+            <p>FAQs</p>
+          </div>
+          <div className={styles.faqWrap}>
+            <Accordion items={data.faqs} />
           </div>
         </section>
       )}

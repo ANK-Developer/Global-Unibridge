@@ -1,11 +1,12 @@
-// Home + Services card content. Copy taken verbatim from _reference/home.html.
+// Home + Services card content. Full copy from _reference/home.html — the service
+// pages' own cards show WordPress auto-excerpts, which truncate mid-sentence.
 export const services = [
   {
     slug: 'tne',
     to: '/services/tne',
     title: 'Transnational Education (TNE) Support',
     excerpt:
-      'Helping universities establish long-term academic collaborations, student pathways, and scalable TNE...',
+      'Helping universities establish long-term academic collaborations, student pathways, and scalable...',
     image: '/images/service-tne.webp',
   },
   {
@@ -21,7 +22,7 @@ export const services = [
     to: '/services/agency-recruitment-model',
     title: 'Agency Recruitment Model',
     excerpt:
-      'Enabling institutions to expand student recruitment through trusted counselor networks, local...',
+      'Enabling institutions to expand student recruitment through trusted counselor networks...',
     image: '/images/service-agency.webp',
   },
   {
@@ -29,7 +30,7 @@ export const services = [
     to: '/services/e-learning',
     title: 'E-Learning & Digital Education Solutions',
     excerpt:
-      'Supporting universities with e-learning partnerships, online program expansion, digital content...',
+      'Supporting universities with e-learning partnerships, online program expansion, digital...',
     image: '/images/service-elearning.webp',
   },
 ]
