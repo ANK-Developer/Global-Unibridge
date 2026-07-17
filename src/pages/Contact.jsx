@@ -92,12 +92,12 @@ export default function Contact() {
             <div className={styles.infoContent}>
               <h3>Social Media</h3>
               <div className={styles.socialLinks}>
-                <a href="#" aria-label="Facebook">
+                {/* <a href="#" aria-label="Facebook">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.5-1.5h1.6V3.6c-.28-.04-1.24-.12-2.35-.12-2.32 0-3.9 1.42-3.9 4.02v2.26H7.5V13h2.35v8h3.65z" /></svg>
                 </a>
                 <a href="#" aria-label="X">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.9 7.9L23 22h-6.3l-4.9-6.5L6.1 22H3l7.4-8.5L2 2h6.5l4.4 5.9L18.9 2zm-1.1 18h1.7L7.3 3.8H5.5L17.8 20z" /></svg>
-                </a>
+                </a> */}
                 <a href="#" aria-label="LinkedIn">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6.94 7.5a1.94 1.94 0 1 1 0-3.88 1.94 1.94 0 0 1 0 3.88zM5.3 20.5h3.28V9.75H5.3V20.5zM10.4 9.75h3.14v1.47h.05c.44-.83 1.5-1.7 3.1-1.7 3.3 0 3.9 2.17 3.9 5v5.98h-3.27v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8v5.4H10.4V9.75z" /></svg>
                 </a>

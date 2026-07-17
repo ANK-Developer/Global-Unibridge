@@ -5,7 +5,6 @@ import {
 } from '../data/howwework.js'
 import styles from './HowWeWork.module.css'
 
-// Minimal thin-divider FAQ (matches the How We Do reference list).
 function HwwFaq({ items }) {
   const [open, setOpen] = useState(0)
   return (
