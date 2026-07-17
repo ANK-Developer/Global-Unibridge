@@ -88,9 +88,9 @@ export const bigStats = {
         'Signing a TNE agreement is only the first step—its true success lies in student mobility. Many institutions struggle to achieve consistent student exchange despite multiple partnerships. Global Unibridge remains actively involved beyond the agreement stage, working with partner institutions to strengthen student mobility and ensure measurable outcomes and lasting impact.',
     },
     {
-      title: 'Collaborative Online International Learning & Research',
+      title: 'International Learning & Research Exchange',
       text:
-        'An innovative teaching approach that enables students and faculty from universities in different countries to collaborate virtually on academic projects. It promotes global learning, cross-cultural engagement and international collaboration through digital platforms, eliminating the need for physical travel.',
+        'International Learning & Research Exchange is a virtual academic initiative that connects students and faculty from universities across the globe to collaborate on learning, research, and interdisciplinary projects. Through digital platforms, participants engage in cross-cultural knowledge sharing, develop global perspectives, and build meaningful international academic partnerships—making global education more accessible without the need for physical travel.',
     },
   ],
 }

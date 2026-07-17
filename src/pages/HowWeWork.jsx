@@ -123,7 +123,8 @@ export default function HowWeWork() {
       {/* India Market Strategy: left heading, 2 cards, navy support box */}
       <section className="section-pad">
         <div className="container">
-          <h2 className={`${styles.imsTitle} ${styles.underline}`}>{hwStrategy.heading}</h2>
+          <div className={styles.strategyContainer}>
+            <h2 className={`${styles.imsTitle} ${styles.underline}`}>{hwStrategy.heading}</h2>
           <p className={styles.strategyIntro}>{hwStrategy.intro}</p>
           <div className={styles.strategyBlocks}>
             {hwStrategy.blocks.map((b) => (
@@ -140,6 +141,7 @@ export default function HowWeWork() {
             </ul>
           </div>
           <p className={styles.closing}>{hwStrategy.closing}</p>
+          </div>
         </div>
       </section>
 
