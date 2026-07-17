@@ -1,16 +1,22 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import PageHero from '../components/PageHero/PageHero.jsx'
+import PartnerForm from './PartnerForm.jsx'
 import styles from './Contact.module.css'
 
+// Querying the place by name (not just the street address) is what labels the red pin
+// "Global Unibridge" rather than dropping an unnamed marker.
 const MAP_EMBED =
-  'https://maps.google.com/maps?q=HB%20Twin%20Towers%20Netaji%20Subhash%20Place%20Pitampura%20Delhi%20110034&t=&z=15&ie=UTF8&iwloc=&output=embed'
+  'https://maps.google.com/maps?q=Global%20Unibridge%2C%20HB%20Twin%20Towers%2C%20Netaji%20Subhash%20Place%2C%20Pitampura%2C%20Delhi%20110034&t=&z=15&ie=UTF8&iwloc=&output=embed'
+
+const MAP_LINK = 'https://maps.google.com/?q=HB+Twin+Towers+Pitampura+Delhi'
+const ADDRESS = '602-605, HB Twin Towers, Netaji Subhash Place, Pitampura, Delhi 110034, India'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [errors, setErrors] = useState({})
   const [sent, setSent] = useState(false)
+  const [showPartner, setShowPartner] = useState(false)
 
   const update = (e) => {
     setForm((f) => ({ ...f, [e.target.name]: e.target.value }))
@@ -45,10 +51,13 @@ export default function Contact() {
         <meta name="description" content="Reach out to Global Unibridge to explore collaboration opportunities and grow together." />
       </Helmet>
 
+      {/* Colours mirror the reference .hero rules: h4 #1e3a8a, h1 #0f172a, p #475569. */}
       <PageHero
         eyebrow="We're Here to Help"
         heading="Let's Connect"
-        eyebrowStyle={{ color: '#1e3a8a' }}
+        eyebrowStyle={{ color: '#1e3a8a', fontSize: '14px', letterSpacing: '2px' }}
+        headingStyle={{ color: '#0f172a' }}
+        leadStyle={{ color: '#475569' }}
         paragraphs={["Whether you're a university representative, education agent, or institutional partner, we'd love to hear from you. Reach out to explore collaboration opportunities and grow together"]}
       />
 
@@ -61,7 +70,9 @@ export default function Contact() {
             </span>
             <div className={styles.infoContent}>
               <h3>Headquarters</h3>
-              <p>602–605, HB Twin Towers, Netaji Subhash Place, Pitampura, Delhi 110034, India</p>
+              <p>
+                <a href={MAP_LINK} target="_blank" rel="noreferrer">{ADDRESS}</a>
+              </p>
             </div>
           </div>
 
@@ -106,56 +117,65 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Form */}
-        <div className={styles.formCard}>
-          <div className={styles.formHead}>
-            <div>
-              <h2 className={styles.formTitle}>Get in touch</h2>
-              <p className={styles.formSub}>
-                Submit your details below. Our team will create your account and send login credentials to your email.
-              </p>
-            </div>
-            <Link to="/contact" className={styles.agentRegBtn}>Partner Registration →</Link>
+        {/* Form — blue .formCard for the contact form, white .formSection for the
+            partner application, mirroring the reference's two sibling containers. */}
+        {showPartner ? (
+          <div className={styles.formSection}>
+            <PartnerForm styles={styles} onExit={() => setShowPartner(false)} />
           </div>
-
-          {sent ? (
-            <div className={styles.success} role="status">
-              <span aria-hidden="true">✓</span>
+        ) : (
+          <div className={styles.formCard}>
+            <div className={styles.formHead}>
               <div>
-                <strong>Thank you!</strong>
-                <p>Your message has been received. Our team will get back to you shortly.</p>
+                <h2 className={styles.formTitle}>Get in touch</h2>
+                <p className={styles.formSub}>
+                  Submit your details below. Our team will create your account and send login credentials to your email.
+                </p>
               </div>
+              <button type="button" className={styles.agentRegBtn} onClick={() => setShowPartner(true)}>
+                Partner Registration →
+              </button>
             </div>
-          ) : (
-            <form onSubmit={onSubmit} noValidate>
-              <div className={styles.inputGroup}>
-                <input
-                  type="text" name="name" placeholder="Your name"
-                  value={form.name} onChange={update}
-                  aria-invalid={!!errors.name}
-                />
-                {errors.name && <span className={styles.error}>{errors.name}</span>}
+
+            {sent ? (
+              <div className={styles.success} role="status">
+                <span aria-hidden="true">✓</span>
+                <div>
+                  <strong>Thank you!</strong>
+                  <p>Your message has been received. Our team will get back to you shortly.</p>
+                </div>
               </div>
-              <div className={styles.inputGroup}>
-                <input
-                  type="email" name="email" placeholder="Your email"
-                  value={form.email} onChange={update}
-                  aria-invalid={!!errors.email}
-                />
-                {errors.email && <span className={styles.error}>{errors.email}</span>}
-              </div>
-              <div className={styles.inputGroup}>
-                <textarea
-                  name="message" placeholder="Write a message" rows="5"
-                  value={form.message} onChange={update}
-                  aria-invalid={!!errors.message}
-                />
-                {errors.message && <span className={styles.error}>{errors.message}</span>}
-              </div>
-              <button type="submit" className={styles.sendBtn}>Send</button>
-            </form>
-          )}
-        </div>
+            ) : (
+              <form onSubmit={onSubmit} noValidate>
+                <div className={styles.inputGroup}>
+                  <input
+                    type="text" name="name" placeholder="Your name"
+                    value={form.name} onChange={update}
+                    aria-invalid={!!errors.name}
+                  />
+                  {errors.name && <span className={styles.error}>{errors.name}</span>}
+                </div>
+                <div className={styles.inputGroup}>
+                  <input
+                    type="email" name="email" placeholder="Your email"
+                    value={form.email} onChange={update}
+                    aria-invalid={!!errors.email}
+                  />
+                  {errors.email && <span className={styles.error}>{errors.email}</span>}
+                </div>
+                <div className={styles.inputGroup}>
+                  <textarea
+                    name="message" placeholder="Write a message" rows="5"
+                    value={form.message} onChange={update}
+                    aria-invalid={!!errors.message}
+                  />
+                  {errors.message && <span className={styles.error}>{errors.message}</span>}
+                </div>
+                <button type="submit" className={styles.sendBtn}>Send</button>
+              </form>
+            )}
+          </div>
+        )}
       </section>
 
       {/* Map */}
