@@ -163,6 +163,8 @@ export const serviceDetails = {
         after:
           "Our in-house team provides end-to-end assistance in navigating India's higher education ecosystem, including guidance related to regulatory frameworks, institutional approvals, operational setup, and compliance processes involving relevant authorities and education bodies.",
       },
+      // The reference keeps each list in the same feature-content column as its
+      // image, so the image spans the whole section rather than just the intro.
       {
         type: 'text',
         title: 'Market Development & Institutional Visibility',
@@ -171,12 +173,7 @@ export const serviceDetails = {
           'Sustainable success in India depends on consistent visibility, localized engagement, and relationship-building across multiple student and institutional touchpoints.',
           'Global Unibridge helps institutions strengthen brand awareness and market positioning through strategic market development initiatives tailored specifically for the Indian education sector.',
         ],
-        image: '/images/me-market-development.jpg',
-      },
-      {
-        type: 'list',
-        title: 'Market Presence Activities Include:',
-        heading: 'small',
+        listTitle: 'Market Presence Activities Include:',
         items: [
           'Education Fairs & Recruitment Events',
           'Institutional Representation Activities',
@@ -188,6 +185,7 @@ export const serviceDetails = {
         ],
         after:
           'Our market development approach focuses on building long-term institutional recognition rather than short-term promotional visibility.',
+        image: '/images/me-market-development.jpg',
       },
       {
         type: 'text',
@@ -197,12 +195,7 @@ export const serviceDetails = {
           "Today's students expect personalized, digitally driven, and continuous engagement from educational institutions.",
           "Global Unibridge's B2B2C Connect Solutions enable universities to build meaningful direct relationships with prospective students through a hybrid model that combines technology, mentorship, and strategic outreach.",
         ],
-        image: '/images/me-b2b2c.jpg',
-      },
-      {
-        type: 'list',
-        title: 'Key Features of Our B2B2C Connect Model:',
-        heading: 'small',
+        listTitle: 'Key Features of Our B2B2C Connect Model:',
         items: [
           'AI-Enabled Student Engagement Systems',
           'Peer-to-Peer Mentorship Platforms',
@@ -212,6 +205,7 @@ export const serviceDetails = {
           'Personalized Outreach Campaigns',
           'Funnel-Based Lead Nurturing Systems',
         ],
+        image: '/images/me-b2b2c.jpg',
       },
       {
         type: 'list',
@@ -231,7 +225,13 @@ export const serviceDetails = {
       },
     ],
     ctaLabel: 'Start Your India Expansion',
-    faqs: [],
+    faqs: [
+      { q: 'What are India market entry solutions for universities?', a: 'India market entry solutions enable international institutions to establish a structured presence through comprehensive support including market research, institutional partnerships, recruitment strategy development, local representation, and student engagement initiatives. By leveraging a dedicated market entry framework in India, universities can build a sustainable pipeline for international student recruitment. This approach also supports long-term brand development and continuous improvement in the quality and size of the applicant pool, ensuring more consistent and scalable outcomes over time.' },
+      { q: 'How can a foreign university enter the Indian education market without opening an office?', a: 'Universities can collaborate with in-country partners such as Global Unibridge to establish effective local representation and market presence without the need for an immediate physical office setup. Such partnerships provide comprehensive support, including institutional outreach, student engagement, and operational assistance. This model enables universities to efficiently enter and operate within the market while leveraging local expertise, networks, and execution capabilities to strengthen visibility and recruitment outcomes.' },
+      { q: 'What is a hybrid market entry model?', a: 'A hybrid market entry model integrates on-ground representation with digital outreach, enabling universities to engage effectively with schools, counsellors, and prospective students through both physical and technology-enabled channels. Global Unibridge offers a structured framework to develop and implement this hybrid model, allowing institutions to benefit from dedicated local support in India while simultaneously leveraging coordinated outreach across key educational institutions. This approach helps create a sustainable and scalable student pipeline, ensuring consistent engagement and improved long-term recruitment outcomes.' },
+      { q: 'Why is local representation important in India?', a: 'Local representation plays a critical role in ensuring effective market engagement and operational efficiency. A locally present resource can generate valuable business intelligence and provide real-time insights, enabling institutions to make informed decisions aligned with current market dynamics. This significantly accelerates processes related to recruitment and collaborations. In addition, local representation helps institutions build trust, maintain continuous stakeholder engagement, participate in regional events, establish strategic partnerships, and respond more effectively to evolving market needs and expectations.' },
+      { q: 'What is a Permanent Establishment (PE) risk for foreign institutions?', a: 'A Permanent Establishment (PE) may be triggered when a foreign organization establishes a sufficient level of business presence in India, which can potentially create tax obligations under applicable laws. Institutions are advised to seek independent legal and tax counsel to assess their specific operational structure and compliance requirements. In a structured market entry model, universities typically operate through an external partner rather than directly deploying their own resources in India. In such arrangements, the on-ground activities are managed by the market entry company, which may help in structuring operations in a manner that reduces direct exposure to PE-related considerations, subject to applicable laws and regulatory interpretation.' },
+    ],
   },
 
   'agency-recruitment-model': {
@@ -340,6 +340,11 @@ export const serviceDetails = {
       },
     ],
     ctaLabel: 'Explore E-Learning Solutions',
-    faqs: [],
+    faqs: [
+      { q: 'What are e-learning solutions for universities?', a: 'E-learning solutions include the development, promotion, delivery, and distribution of online degrees, certificate programs, digital learning content, and virtual educational experiences.' },
+      { q: 'How can universities expand their online education offerings internationally?', a: 'Institutions can collaborate with specialized partners to effectively localize content, implement digital marketing strategies, build efficient distribution channels, and expand their reach into new and emerging learner markets. Global Unibridge is a seasoned player in this domain, with extensive experience in delivering online education solutions and managing digital learning ecosystems. Over the years, it has consistently supported institutions in scaling their online education offerings and strengthening their presence in global markets.' },
+      { q: 'Does Global Unibridge support both B2B and B2C digital education strategies?', a: 'Yes. The organization assists with institutional partnerships, online program distribution, direct learner outreach, market positioning, and channel development for digital education initiatives.' },
+      { q: 'What are the advantages of simulation-based learning?', a: 'Simulation-based learning provides hands-on practice in a controlled environment, helping learners improve decision-making, problem-solving, and practical skills while increasing engagement and knowledge retention.' },
+    ],
   },
 }

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import Accordion from '../Accordion/Accordion.jsx'
-import { services } from '../../data/services.js'
+import { relatedServices } from '../../data/relatedServices.js'
 import { whyChooseUs } from '../../data/serviceDetails.js'
 import styles from './ServiceDetail.module.css'
 
@@ -37,6 +37,7 @@ function Block({ block }) {
       </div>
     )
   }
+  // Reference order inside a block: title, lead-in, paragraphs, list heading, list, closer.
   const body = (
     <>
       <BlockTitle block={block} />
@@ -45,8 +46,9 @@ function Block({ block }) {
         ? <h5 className={styles.blockSubHead}>{block.subtitle}</h5>
         : <p className={styles.blockAfter}>{block.subtitle}</p>
       )}
-      {block.type === 'list' && <CheckList items={block.items} />}
       {block.paragraphs && block.paragraphs.map((p, i) => (<p key={i} className={styles.blockAfter}><Rich text={p} /></p>))}
+      {block.listTitle && <h5 className={styles.blockSubHead}>{block.listTitle}</h5>}
+      {block.items && <CheckList items={block.items} />}
       {block.after && <p className={styles.blockAfter}><Rich text={block.after} /></p>}
     </>
   )
@@ -140,10 +142,12 @@ export default function ServiceDetail({ data }) {
             {data.slug === 'tne' ? 'What We Do' : 'Related Services'}
           </h3>
           <ul className={styles.relatedGrid}>
-            {services.map((s) => (
+            {relatedServices.map((s) => (
               <li key={s.slug} className={styles.relatedCard}>
                 <Link to={s.to} className={styles.relatedImg}>
-                  <img src={s.image} alt={s.title} loading="lazy" />
+                  {/* Decorative — the card's own heading already names the service,
+                      so an alt here just repeats it to screen readers. */}
+                  <img src={s.image} alt="" loading="lazy" />
                 </Link>
                 <div className={styles.relatedContent}>
                   <h4><Link to={s.to}>{s.title}</Link></h4>

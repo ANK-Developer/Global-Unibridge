@@ -3,9 +3,12 @@ import { NavLink, Link, useLocation } from 'react-router-dom'
 import styles from './Header.module.css'
 
 // Resources mega-menu cards (matches source: 3 image cards).
+// The reference carries a "Yoga & Mindfulness Retreat" caption over the Articles
+// card — leftover demo content from the theme it was built on, pointing at an
+// event that doesn't exist. Deliberately not reproduced.
 const RESOURCE_CARDS = [
   { label: 'Events', to: '/event', image: '/images/megamenu/events.webp' },
-  { label: 'Articles', to: '/article', image: '/images/megamenu/articles.webp', overlay: 'Yoga & Mindfulness Retreat', overlayTo: '/events/yoga-mindfulness-retreat' },
+  { label: 'Articles', to: '/article', image: '/images/megamenu/articles.webp' },
   { label: 'FAQs', to: '/faqs', image: '/images/megamenu/faqs.webp' },
 ]
 
@@ -114,8 +117,7 @@ export default function Header() {
                 <Link to={card.to}>{card.label}</Link>
               </h4>
               <Link to={card.to} className={styles.megaCard}>
-                <img src={card.image} alt={card.label} loading="lazy" />
-                {card.overlay && <span className={styles.megaOverlay}>{card.overlay}</span>}
+                <img src={card.image} alt="" loading="lazy" />
               </Link>
             </div>
           ))}

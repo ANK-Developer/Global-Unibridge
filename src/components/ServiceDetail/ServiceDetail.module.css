@@ -73,13 +73,17 @@
   align-items: flex-start;
   gap: 50px;
 }
+/* Reference bases these at 55% / 400px, but 55% + 50px gap + 400px overflows the
+   900px copy column — allow both to shrink so the image stays inside the column. */
 .blockText {
-  flex: 0 0 55%;
+  flex: 0 1 55%;
   max-width: 550px;
+  min-width: 0;
 }
 .blockText > :last-child { margin-bottom: 0; }
 .blockImg {
-  flex: 0 0 400px;
+  flex: 0 1 400px;
+  min-width: 0;
 }
 .blockImg img {
   width: 100%;
@@ -302,11 +306,13 @@
   object-fit: cover;
   display: block;
 }
+/* Centred so the cards stay balanced when a title wraps to two lines. */
 .relatedContent {
   padding: 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
+  text-align: center;
 }
 .relatedContent h4 {
   font-size: 18px;
@@ -323,7 +329,7 @@
 }
 .relatedMore {
   margin-top: auto;
-  align-self: flex-start;
+  align-self: center;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 14px;
