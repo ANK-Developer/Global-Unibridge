@@ -5,7 +5,7 @@ export const services = [
     to: '/services/tne',
     title: 'Transnational Education (TNE) Support',
     excerpt:
-      'Helping universities establish long-term academic collaborations, student pathways, and scalable TNE models in India for sustainable institutional growth.',
+      'Helping universities establish long-term academic collaborations, student pathways, and scalable TNE...',
     image: '/images/service-tne.webp',
   },
   {
@@ -13,7 +13,7 @@ export const services = [
     to: '/services/india-market-entry',
     title: 'India Market Entry Solutions',
     excerpt:
-      'Combining on-ground representation with technology-driven outreach to help institutions connect with 50+ schools & colleges and reach 2,000+ students.',
+      'Combining on-ground representation with technology-driven outreach to help institutions...',
     image: '/images/service-market-entry.webp',
   },
   {
@@ -21,7 +21,7 @@ export const services = [
     to: '/services/agency-recruitment-model',
     title: 'Agency Recruitment Model',
     excerpt:
-      'Enabling institutions to expand student recruitment through trusted counselor networks, local partnerships, and experienced support teams across India.',
+      'Enabling institutions to expand student recruitment through trusted counselor networks, local...',
     image: '/images/service-agency.webp',
   },
   {
@@ -29,7 +29,7 @@ export const services = [
     to: '/services/e-learning',
     title: 'E-Learning & Digital Education Solutions',
     excerpt:
-      'Supporting universities with e-learning partnerships, online program expansion, digital content strategies, and technology-enabled education solutions.',
+      'Supporting universities with e-learning partnerships, online program expansion, digital content...',
     image: '/images/service-elearning.webp',
   },
 ]

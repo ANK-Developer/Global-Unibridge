@@ -57,7 +57,7 @@
 }
 .featureCard h3 {
   font-size: 18px;
-  color: var(--color-red);
+  color: var(--color-black);
   margin: 0 0 10px;
 }
 .featureCard p {
