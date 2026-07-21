@@ -34,7 +34,10 @@
 /* ---- What Makes Us Different ---- */
 .diffGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* minmax(0, 1fr) lets the tracks shrink below the cards' min-content (90px icon
+     + padding + long title words) instead of overflowing the container on
+     narrow screens — the plain `1fr` was clipping the right column on phones. */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 30px;
 }
 .diffCard {
@@ -79,7 +82,7 @@
 
 /* ---- Our Global Network (exact: single white wrapper, navy left + cards right) ---- */
 .networkWrapper {
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
   background: #fff;
   border-radius: 28px;
@@ -174,6 +177,7 @@
   box-shadow: 0 10px 30px rgba(24, 44, 89, 0.08);
   border-color: #182c59;
 }
+
 .networkIcon {
   display: flex;
   align-items: center;
@@ -291,14 +295,18 @@
 }
 
 @media (max-width: 1024px) {
-  .diffGrid { grid-template-columns: repeat(2, 1fr); }
+  .diffGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .networkWrapper { grid-template-columns: 1fr; }
   .networkLeft,
   .networkRight { padding: 40px 28px; }
   .networkLeft h2 { font-size: 34px; }
 }
 @media (max-width: 767px) {
-  .diffGrid { grid-template-columns: 1fr 1fr; }
+  .diffGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  /* Compact the cards so two fit comfortably on a phone without clipping. */
+  .diffCard { padding: 22px 16px; min-height: 190px; gap: 12px; }
+  .diffIcon { width: 68px; height: 68px; }
+  .diffCard h3 { font-size: 16px; }
   .networkCardGrid { grid-template-columns: 1fr; }
   .split { grid-template-columns: 1fr; gap: 32px; }
   .banner { margin: 8px; padding: 8px; }
@@ -307,4 +315,13 @@
   .networkLeft,
   .networkRight { padding: 32px 22px; }
   .networkLeft h2 { font-size: 28px; }
+  
+}
+/* Narrowest phones: a single column reads better than two cramped ones. */
+@media (max-width: 430px) {
+  .diffGrid { grid-template-columns: 1fr; }
+  .diffCard { min-height: 0; padding: 26px 20px; }
+  .diffIcon { width: 76px; height: 76px; }
+  .diffCard h3 { font-size: 18px; }
+ 
 }

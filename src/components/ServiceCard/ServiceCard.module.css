@@ -20,12 +20,12 @@
 .imgWrap {
   border-radius: 12px;
   height: 200px;
-  width: 370px;
+  width: 100%;
   overflow: hidden;
 }
 .imgWrap img {
-  height: 200px;
-  width: 370px;
+  height: 100%;
+  width: 100%;
   object-fit: cover;
   display: block;
 }

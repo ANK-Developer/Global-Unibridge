@@ -74,21 +74,15 @@ img {
   display: block;
 }
 
-/* ---- Container ---- */
+/* ---- Container ----
+   One fluid container: fills the viewport minus a proportional gutter, up to
+   --container-max, then centers. Wider than the site's old caps, so large screens
+   show much smaller side margins than before. */
 .container {
   width: 100%;
-  max-width: var(--container-max-width);
+  max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--container-padding);
-  margin-top: 2rem;
-}
-
-@media (max-width: 1024px) {
-  .container { max-width: var(--container-tablet); }
-}
-
-@media (max-width: 767px) {
-  .container { max-width: var(--container-mobile); }
 }
 
 /* ---- Buttons ---- */
@@ -145,7 +139,7 @@ img {
   margin-bottom: 12px;
 }
 .section-title {
-  font-size: 36px;
+  font-size: clamp(26px, 3.2vw, 36px);
   line-height: 1.25;
   color: var(--color-accent);
   margin: 0 0 22px;
@@ -163,7 +157,7 @@ img {
 }
 
 @media (max-width: 767px) {
-  .section-pad { padding: 52px 0; }
+  /* .section-pad { padding: 52px 0; } */
   .section-title { font-size: 28px; }
 }
 

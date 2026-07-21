@@ -16,7 +16,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 28px;
-  padding: 0px 200px ;
+  /* Was `padding: 0 200px` to narrow the 2-col grid on desktop — but that fixed
+     400px of padding crushed the cards on phones. Center a capped grid instead. */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 @media (max-width: 767px) {

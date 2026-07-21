@@ -3,9 +3,9 @@
   display: grid;
   grid-template-columns: 1fr 1.8fr;
   gap: 40px;
-  max-width: 1400px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 40px 5% 60px;
+  padding: 40px var(--gutter) 60px;
   align-items: start;
 }
 
@@ -343,9 +343,9 @@
 
 /* Map */
 .mapWrapper {
-  max-width: 1400px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 5% 60px;
+  padding: 0 var(--gutter) 60px;
 }
 .mapContainer {
   position: relative;

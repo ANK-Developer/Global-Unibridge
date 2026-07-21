@@ -4,12 +4,12 @@
   padding: 10px 0 0;
 }
 .heroBox {
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
   box-sizing: border-box;
   background: var(--color-grey-50);
   border-radius: 8px;
-  padding: 30px 24px 42px;
+  padding: 30px var(--gutter) 42px;
 }
 .breadcrumb {
   display: flex;
@@ -53,10 +53,10 @@
   padding: 0;
 }
 .contentWrap {
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 48px 24px 64px;
+  padding: 48px var(--gutter) 64px;
 }
 .content {
   max-width: 900px;
@@ -163,9 +163,9 @@
   overflow: hidden;
 }
 .partnerContainer {
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--gutter);
   box-sizing: border-box;
 }
 .sectionHeader {
@@ -266,9 +266,9 @@
 
 /* Collection grid ("What We Do" / "Related Services") — reference .collection-related */
 .relatedSection {
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 60px auto 64px;
-  padding: 40px 20px 0;
+  padding: 40px var(--gutter) 0;
   border-top: 1px solid #edf1f7;
   box-sizing: border-box;
 }

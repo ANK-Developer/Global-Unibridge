@@ -47,10 +47,12 @@
   --font-weight-body: 400;
   --font-weight-title: 700;      /* --thim-font-title-variant */
 
-  /* ---- Heading sizes (Elementor global typography) ---- */
-  --font-size-h1: 48px;          /* typography-722e303 (48/700, lh 1.25em) */
-  --font-size-h2: 36px;          /* typography-primary (36/700, lh 1.5em) */
-  --font-size-h3: 32px;          /* typography-5a3aa4c (32/700, lh 40px) */
+  /* ---- Heading sizes (fluid) ----
+     clamp(min, vw, max): shrink on phones, grow with the viewport, then hold at a
+     readable max on large screens. Reference desktop sizes are the clamp maxima. */
+  --font-size-h1: clamp(30px, 4.6vw, 48px);  /* was 48 */
+  --font-size-h2: clamp(26px, 3.2vw, 36px);  /* was 36 */
+  --font-size-h3: clamp(22px, 2.4vw, 32px);  /* was 32 */
   --font-size-sm: 14px;          /* typography-secondary (14/400) */
 
   /* ---- Buttons ---- */
@@ -59,11 +61,19 @@
   --button-line-height: 1.5em;
   --button-text-transform: capitalize;
 
-  /* ---- Layout / containers (Elementor .e-con) ---- */
-  --container-max-width: 1290px; /* desktop boxed container */
-  --container-tablet: 1024px;    /* @media <=1024 */
-  --container-mobile: 767px;     /* @media <=767 */
-  --container-padding: 15px;
+  /* ---- Layout / containers ----
+     One unified fluid container for the whole site. It fills the viewport with a
+     proportional gutter up to --container-max, then holds. 1600px is the widest
+     width every page's internal layout still renders cleanly at (some sections —
+     e.g. How We Do's Partnership Model — overlap beyond ~1600), and it is wider
+     than the old per-page caps (1000–1400px), so large screens fill MORE than
+     before while staying intact. Gutter never drops below 16px on phones. */
+  --gutter: max(16px, 3vw);      /* fluid page gutter (left/right) */
+  --container-max: 1600px;       /* unified cap (replaces 1000/1200/1265/1290/1380/1400) */
+  --container-padding: var(--gutter);
+  /* Comfortable measure for long-form body copy (legal / article prose), kept
+     fluid but readable — text-only columns, not layout containers. */
+  --measure: min(94vw, 78ch);
 
   /* ---- Breakpoints (Elementor defaults) ---- */
   --bp-tablet: 1024px;

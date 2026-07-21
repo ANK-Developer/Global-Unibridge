@@ -150,7 +150,6 @@
 }
 .highlightCard {
   background: #182c59;
-  width: 198;
   color: #fff;
   padding: 25px 20px;
   border-radius: 18px;
@@ -309,7 +308,10 @@
   left: 50%;
   transform: translateX(-50%);
   min-height: 700px;
-  background: url('/images/global-expansion-bg.webp') center center / cover no-repeat;
+  /* Dark navy fallback FIRST — if the webp fails to load (seen on some iOS
+     Safari), the section stays a dark hero with readable white text instead of
+     going transparent (white bg + white text = invisible). */
+  background: #0b1a33 url('/images/global-expansion-bg.webp') center center / cover no-repeat;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -322,12 +324,12 @@
 .expansionInner {
   position: relative;
   z-index: 2;
-  width: 88%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: var(--container-max);
   margin: 0 auto;
   text-align: center;
   color: #fff;
-  padding: 60px 0;
+  padding: 60px var(--gutter);
 }
 .expansionHeading {
   font-size: clamp(28px, 4.4vw, 58px);
@@ -339,7 +341,7 @@
 .expansionText {
   font-size: clamp(15px, 1.55vw, 20px);
   line-height: 1.7;
-  max-width: 1180px;
+  max-width: var(--measure);
   margin: 0 auto 28px;
   color: #fff;
 }
@@ -391,9 +393,9 @@
   justify-content: center;
   gap: 50px;
   flex-wrap: wrap;
-  max-width: 1200px;
+  max-width: var(--container-max);
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 var(--gutter);
 }
 .uspCard {
   width: 300px;
@@ -584,4 +586,33 @@
   .serviceGrid { grid-template-columns: 1fr 1fr; }
   .uspRow { gap: 60px; }
   .h2 { font-size: 28px; }
+  .expansionHero { min-height: auto; }
+  .expansionInner { padding: 48px var(--gutter); }
+  .pillWide { padding: 12px 40px; }
+}
+
+/* Phones: the service cards' images have a wide min-content, so two columns
+   overflow and clip below ~540px — stack to a single column. */
+@media (max-width: 600px) {
+  .serviceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .highlightBox {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutSubtitle {
+    text-align: center;
+    font-size: 18px; /* Increase subtitle size */
+    line-height: 1.6;
+  }
+
+  .eyebrow {
+    font-size: 18px; /* Increase subtitle size */
+    line-height: 1.6;
+  }
+   
+
+
 }

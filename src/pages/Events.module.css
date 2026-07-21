@@ -281,10 +281,14 @@
     column-count: 1;
   }
 
+  /* Was overflow-x:auto, which (per spec) also forces overflow-y and CLIPS the
+     year dropdown that opens below the bar. Wrap the filters instead so the
+     dropdown can overflow the bar and stay visible. */
   .filters {
     gap: 18px;
-    overflow-x: auto;
+    flex-wrap: wrap;
     justify-content: flex-start;
+    margin-top: 0;
     padding-bottom: 15px;
   }
 
